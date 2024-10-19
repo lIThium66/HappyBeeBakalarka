@@ -1,0 +1,69 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\VersionOne.bundle.scp.css",
+      "PackagePath": "staticwebassets\\VersionOne.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\SBtask.png",
+      "PackagePath": "staticwebassets\\SBtask.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\background1.png",
+      "PackagePath": "staticwebassets\\background1.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\background2.png",
+      "PackagePath": "staticwebassets\\background2.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\beehive.png",
+      "PackagePath": "staticwebassets\\beehive.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\beehiveBL.png",
+      "PackagePath": "staticwebassets\\beehiveBL.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\hcomb.png",
+      "PackagePath": "staticwebassets\\hcomb.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\task.png",
+      "PackagePath": "staticwebassets\\task.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.VersionOne.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.VersionOne.props",
+      "PackagePath": "build\\VersionOne.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.VersionOne.props",
+      "PackagePath": "buildMultiTargeting\\VersionOne.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.VersionOne.props",
+      "PackagePath": "buildTransitive\\VersionOne.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

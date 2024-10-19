@@ -1,0 +1,28 @@
+﻿@page "/tasks"
+ 
+<PageTitle>Tasks</PageTitle>
+ <h2>Tasks</h2>
+ <h4> Be as productive as Bee <span class="beeimg"></span> </h4>
+
+ <body>
+    <div class="addtask">
+        <label> <strong> Add your TASK: </strong> <input @bind="Task" /> 
+            <button class="btn btn-warning" type="button" @onclick="saveTask"><strong>Save Task</strong></button> 
+        </label>
+    </div>
+
+  
+</body>
+
+@code {
+
+    private string Task; 
+
+    public void saveTask() {
+        //Console.WriteLine("Saved!");
+
+        Console.WriteLine(Task);
+        StateHasChanged();
+    } 
+
+}
