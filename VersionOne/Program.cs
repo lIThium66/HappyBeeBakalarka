@@ -10,15 +10,6 @@ builder.Services.AddRazorComponents()
 
 //pridanie authentifikacie [login]
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options => {
-        options.Cookie.Name = "auth_token";
-        options.LoginPath = "/login";
-        options.Cookie.MaxAge = TimeSpan.FromMinutes(5);
-        options.AccessDeniedPath = "/acces_denied";
-    });
-builder.Services.AddAuthorization();
-builder.Services.AddCascadingAuthenticationState();
 
 
 
@@ -38,9 +29,6 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
-
-app.UseAuthentication();
-app.UseAuthorization();
 
 
 app.MapRazorComponents<App>()

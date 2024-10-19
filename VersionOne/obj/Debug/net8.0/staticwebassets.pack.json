@@ -45,8 +45,20 @@
       "PackagePath": "staticwebassets\\hcomb.png"
     },
     {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\keeperLogin.png",
+      "PackagePath": "staticwebassets\\keeperLogin.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\login.png",
+      "PackagePath": "staticwebassets\\login.png"
+    },
+    {
       "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\task.png",
       "PackagePath": "staticwebassets\\task.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOne\\wwwroot\\user.png",
+      "PackagePath": "staticwebassets\\user.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.VersionOne.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -232,6 +232,39 @@ h4[b-jbo46pne33] {
     font-size: 12px;
     font-style: italic;
 }
+/* _content/VersionOne/Components/Pages/Login.razor.rz.scp.css */
+body[b-ltrdgmgrfl] {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.login-okno[b-ltrdgmgrfl] {
+    text-align: center;
+    border: 5px solid gold;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    border-radius: 100px;
+    
+}
+.account-name[b-ltrdgmgrfl] {
+    margin-bottom: 10px;
+
+}
+
+.password[b-ltrdgmgrfl] {
+
+    margin-bottom: 10px;
+}
+
+.login-okno img[b-ltrdgmgrfl] {
+    display: block;
+    margin: 0 auto;
+
+}
 /* _content/VersionOne/Components/Pages/Tasks.razor.rz.scp.css */
 h4[b-mgsnpf7tlv] {
     font-size: 12px;

@@ -190,3 +190,5 @@ C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOne\obj\Debug\net8.0
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOne\obj\Debug\net8.0\VersionOne.pdb
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOne\obj\Debug\net8.0\VersionOne.genruntimeconfig.cache
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOne\obj\Debug\net8.0\ref\VersionOne.dll
+C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOne\obj\Debug\net8.0\VersionOne.sourcelink.json
+C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOne\obj\Debug\net8.0\scopedcss\Components\Pages\Login.razor.rz.scp.css
