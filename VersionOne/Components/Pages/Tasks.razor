@@ -7,7 +7,9 @@
  <body>
     <div class="addtask">
         <label> <strong> Add your TASK: </strong> <input @bind="Task" /> 
-            <button class="btn btn-warning" type="button" @onclick="saveTask"><strong>Save Task</strong></button> 
+            <button class="btn btn-warning" type="button" @onclick="saveTask"><strong>Save Task</strong></button>
+            <button class="btn btn-danger" type="button" @onclick="deleteTask"><strong>Delete</strong></button>
+            <button class="btn btn-dark" type="button" @onclick="editTask"><strong>Edit</strong></button>
         </label>
     </div>
 
@@ -24,5 +26,12 @@
         Console.WriteLine(Task);
         StateHasChanged();
     } 
-
+    private void editTask(MouseEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+    private void deleteTask(MouseEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
 }
