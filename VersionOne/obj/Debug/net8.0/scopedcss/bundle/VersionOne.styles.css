@@ -12,6 +12,8 @@ main[b-xsovifua00] {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    max-width: 100%;
+    height: 100vh;
    /* opacity: 75%; */
   
 }
@@ -235,7 +237,7 @@ h4[b-jbo46pne33] {
 /* _content/VersionOne/Components/Pages/Login.razor.rz.scp.css */
 body[b-ltrdgmgrfl] {
     height: 100%;
-    margin: 0;
+    margin: 20px;
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -250,14 +252,28 @@ body[b-ltrdgmgrfl] {
     border-radius: 100px;
     
 }
-.account-name[b-ltrdgmgrfl] {
+.accBox[b-ltrdgmgrfl] {
     margin-bottom: 10px;
 
 }
 
-.password[b-ltrdgmgrfl] {
+input[type=text][b-ltrdgmgrfl] {
+   
+    box-sizing: border-box;
+    border: 2px solid black;
+    outline: none;
+    font: bold;
+}
 
+
+input[type=text]:focus[b-ltrdgmgrfl] {
+    border: 3px solid gold;
+}
+
+.passBox[b-ltrdgmgrfl] {
+    padding: 8px;
     margin-bottom: 10px;
+    
 }
 
 .login-okno img[b-ltrdgmgrfl] {
@@ -272,6 +288,8 @@ h4[b-mgsnpf7tlv] {
     display: inline-flex;
     align-items: center;
 }
+
+
 
 .beeimg[b-mgsnpf7tlv] {
     background-image: url(bee.png);

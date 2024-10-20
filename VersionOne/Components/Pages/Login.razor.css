@@ -1,6 +1,6 @@
 ﻿body {
     height: 100%;
-    margin: 0;
+    margin: 20px;
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -15,14 +15,28 @@
     border-radius: 100px;
     
 }
-.account-name {
+.accBox {
     margin-bottom: 10px;
 
 }
 
-.password {
+input[type=text] {
+   
+    box-sizing: border-box;
+    border: 2px solid black;
+    outline: none;
+    font: bold;
+}
 
+
+input[type=text]:focus {
+    border: 3px solid gold;
+}
+
+.passBox {
+    padding: 8px;
     margin-bottom: 10px;
+    
 }
 
 .login-okno img {
