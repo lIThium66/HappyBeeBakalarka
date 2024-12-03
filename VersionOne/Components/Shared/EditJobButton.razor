@@ -1,0 +1,17 @@
+﻿@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<button class="btn btn-danger" type="button" @onclick="EditTask"><strong>Edit Task</strong></button>
+
+
+
+@code {
+
+    [Parameter]
+    public int Id { get; set; }
+    private void EditTask()
+    {
+        NavigationManager.NavigateTo($"/edit-tasks/{Id}");
+    }
+
+}

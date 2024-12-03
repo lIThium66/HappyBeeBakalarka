@@ -1,0 +1,14 @@
+﻿@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<button class="btn btn-warning" type="button" @onclick="CreateTask"><strong>Create Task</strong></button>
+
+
+
+@code {
+    private void CreateTask()
+    {
+        NavigationManager.NavigateTo("/edit-tasks");    
+    }
+
+}

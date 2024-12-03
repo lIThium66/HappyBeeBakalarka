@@ -22,6 +22,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOne/Components/Pages/EditJob.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFZGl0Sm9iLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOne/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -32,6 +36,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOne/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOne/Components/Shared/CreateJobButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcQ3JlYXRlSm9iQnV0dG9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOne/Components/Shared/EditJobButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcRWRpdEpvYkJ1dHRvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOne/Components/_Imports.razor]

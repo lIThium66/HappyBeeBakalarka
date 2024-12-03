@@ -1,4 +1,9 @@
 ﻿@page "/tasks"
+@inject IJobServices JobService
+@rendermode InteractiveServer
+@* @inject NavigationManager NavigationManager *@
+@attribute [StreamRendering]
+
 
 
 <!DOCTYPE html>
@@ -12,37 +17,52 @@
 <h2>Tasks</h2>
 <h4> Be as productive as Bee <span class="beeimg"></span> </h4>
 </html>
- 
 
 
  <body>
-    <div class="addtask">
-        <label> <strong> Add your TASK: </strong> <input @bind="Task" /> 
-            <button class="btn btn-warning" type="button" @onclick="saveTask"><strong>Save Task</strong></button>
-            <button class="btn btn-danger" type="button" @onclick="deleteTask"><strong>Delete</strong></button>
-            <button class="btn btn-dark" type="button" @onclick="editTask"><strong>Edit</strong></button>
+    @*     <div class="addtask">
+        <label> <strong> add your task: </strong> <input />
+            <button class="btn btn-warning" type="button" @onclick="createtask"><strong>create task</strong></button>
         </label>
-    </div>
+    </div> *@
 
   
 </body>
 
+@if (jobs == null) 
+{
+    <span>Loading...</span>
+}
+else if (jobs.Count == 0)
+{
+    <span>No tasks found.</span>
+}
+else
+{
+    <ul>
+        @foreach (var job in jobs)
+        {
+            <li>@job.Name <EditJobButton Id="job.Id"/></li>
+        }
+    </ul>
+}
+
+<CreateJobButton />
+
+
 @code {
+    List<Job>? jobs = null;
 
-    private string Task; 
-
-    public void saveTask() {
-        //Console.WriteLine("Saved!");
-
-        Console.WriteLine(Task);
-        StateHasChanged();
-    } 
-    private void editTask(MouseEventArgs e)
+    protected override async Task OnInitializedAsync()
     {
-        throw new NotImplementedException();
+        jobs = await JobService.GetAllJobs();
     }
-    private void deleteTask(MouseEventArgs e)
+
+    /*
+    private void CreateTask()
     {
-        throw new NotImplementedException();
+        NavigationManager.NavigateTo("/edit-tasks");
     }
+
+    */
 }

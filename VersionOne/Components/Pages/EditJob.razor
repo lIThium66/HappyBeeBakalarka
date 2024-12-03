@@ -1,0 +1,30 @@
+﻿@page "/edit-tasks"
+@page "/edit-tasks/{id:int}"
+@inject IJobServices JobServices
+
+<h2>Create task</h2>
+
+<h3>What’s the buzz today?</h3>
+<h5>Every bee knows: no tasks, no honey. Keep the hive alive and thriving!</h5>
+
+<EditForm Model="job" OnSubmit="HandleSubmit" FormName="editTask">
+    <label>Name</label>
+    <InputText @bind-Value="job.Name">@job.Name</InputText>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+
+
+@code {
+
+    [Parameter]
+    public int? Id { get; set; }
+    [SupplyParameterFromForm]
+    Job job { get; set; } = new Job { Name = string.Empty };
+
+
+    async Task HandleSubmit()
+    {
+        await JobServices.AddJob(job);
+    }
+}
