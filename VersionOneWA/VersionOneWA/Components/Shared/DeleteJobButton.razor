@@ -1,0 +1,27 @@
+﻿@inject IJobServices JobService
+
+<button class="btn btn-dark" type="button" @onclick="OnDelete">
+    <strong>Delete</strong>
+</button>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnJobDeleted { get; set; } 
+
+  
+
+    private async Task OnDelete()
+    {
+        
+        await JobService.DeleteJob(Id);
+
+      
+        if (OnJobDeleted.HasDelegate)
+        {
+            await OnJobDeleted.InvokeAsync(Id);
+        }
+    }
+}

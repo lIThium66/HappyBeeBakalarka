@@ -1,0 +1,74 @@
+﻿@page "/tasks"
+@rendermode InteractiveServer
+@* @inject NavigationManager NavigationManager *@
+@attribute [StreamRendering]
+@inject IJobServices JobService
+
+
+<head>
+    <title>Tasks</title>
+</head>
+
+
+<h2>Tasks</h2>
+<h4> Be as productive as Bee <span class="beeimg"></span> </h4>
+<br>
+
+<CreateJobButton></CreateJobButton>
+ <body>
+    @*     <div class="addtask">
+        <label> <strong> add your task: </strong> <input />
+            <button class="btn btn-warning" type="button" @onclick="createtask"><strong>create task</strong></button>
+        </label>
+    </div> *@
+
+  
+</body>
+
+@if (jobs == null) 
+{
+    <span>Loading...</span><br>
+}
+else if (jobs.Count == 0)
+{
+    <span>No tasks found.</span><br>
+}
+else
+{
+    <div class="tasks-container">
+        @foreach (var job in jobs)
+        {
+            <div class="task-card">
+            <h2>@job.Name</h2>
+                <div class="task-buttons">
+                     <EditJobButton Id="job.Id"/>
+                     <DeleteJobButton Id="job.Id" OnJobDeleted="HandleJobDeleted" />
+                    </div>
+            </div>
+        }
+ 
+    </div>
+}
+
+@code {
+    List<Job>? jobs = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        jobs = await JobService.GetAllJobs();
+
+    }
+
+    private async Task HandleJobDeleted(int id)
+    {
+        jobs = jobs?.Where(job => job.Id != id).ToList(); 
+        StateHasChanged(); 
+    }
+    /*
+    private void CreateTask()
+    {
+        NavigationManager.NavigateTo("/edit-tasks");
+    }
+
+    */
+}
