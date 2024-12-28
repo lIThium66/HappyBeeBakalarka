@@ -1,0 +1,108 @@
+﻿@page "/edit-beehives"
+@page "/edit-beehives/{id:int}"
+@inject IBeehiveService BeehiveService
+@rendermode InteractiveWebAssembly
+@inject NavigationManager NavigationManager
+
+@if (Id == null)
+{
+    <h2>Create Beehive</h2>
+}
+else
+{
+    <h2>Edit @beehive.Name</h2>
+}
+@*toto prepisat!!!!*@
+<h3>What’s the buzz today?</h3>
+<h5>Every bee knows: no tasks, no honey. Keep the hive alive and thriving!</h5>
+
+<div class="form-container">
+    <EditForm EditContext="editContext" OnValidSubmit="HandleSubmit" OnInvalidSubmit="HandleInvalidSubmit" FormName="EditBeehive">
+        <DataAnnotationsValidator />
+
+        <div class="form-group">
+            <label>Name</label>
+            <InputText @bind-Value="beehive.Name"/>
+            <ValidationMessage For="@(() => beehive.Name)" class="validation-message" /> <br>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" disabled="@isSubmitting">Submit</button>
+
+        <ValidationSummary />
+    </EditForm>
+</div>
+
+
+
+@code {
+
+    [Parameter]
+    public int? Id { get; set; }
+    Beehive beehive { get; set; } = new Beehive { Name = string.Empty };
+    EditContext editContext;
+    private bool isSubmitting = false;
+
+    protected override void OnInitialized()
+    {
+        editContext = new EditContext(beehive);
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Id == null)
+        {
+            beehive = new Beehive { Name = string.Empty };
+            editContext = new EditContext(beehive);
+            return;
+        }
+
+        beehive = await BeehiveService.GetBeehiveById((int)Id);
+        editContext = new EditContext(beehive);
+    }
+
+
+    async Task HandleSubmit()
+    {
+        Console.WriteLine($"Beehive nazov: {beehive.Name}");
+        if (beehive.Name == string.Empty)
+        {
+            return;
+        }
+        if (isSubmitting)
+            return;
+
+        isSubmitting = true;
+
+        try
+        {
+            if (Id == null)
+            {
+                await BeehiveService.AddBeehive(beehive);
+                NavigationManager.NavigateTo("/beehives");
+            }
+            else
+            {
+                await BeehiveService.EditBeehive((int)Id, beehive);
+                NavigationManager.NavigateTo("/beehives");
+
+            }
+
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
+
+    void HandleInvalidSubmit()
+    {
+        Console.WriteLine("Form submission failed due to invalid data.");
+    }
+
+
+}

@@ -16,11 +16,7 @@
 
 <CreateJobButton></CreateJobButton>
  <body>
-    @*     <div class="addtask">
-        <label> <strong> add your task: </strong> <input />
-            <button class="btn btn-warning" type="button" @onclick="createtask"><strong>create task</strong></button>
-        </label>
-    </div> *@
+  
 
   
 </body>
@@ -40,6 +36,7 @@ else
         {
             <div class="task-card">
             <h2>@job.Name</h2>
+            <h5>@job.Description</h5>
                 <div class="task-buttons">
                      <EditJobButton Id="job.Id"/>
                      <DeleteJobButton Id="job.Id" OnJobDeleted="HandleJobDeleted" />
@@ -64,11 +61,5 @@ else
         jobs = jobs?.Where(job => job.Id != id).ToList(); 
         StateHasChanged(); 
     }
-    /*
-    private void CreateTask()
-    {
-        NavigationManager.NavigateTo("/edit-tasks");
-    }
-
-    */
+  
 }

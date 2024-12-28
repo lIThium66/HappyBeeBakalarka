@@ -1,0 +1,82 @@
+
+.tasks-container[b-wvkfcn8eqq] {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 16px; 
+    padding: 16px;
+    justify-content: flex-start; 
+}
+
+.task-card[b-wvkfcn8eqq] {
+    background-color: gold; 
+    border: 1px solid #daa520; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 16px;
+    width: calc(25% - 16px);
+    text-align: center; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+    flex-shrink: 0; 
+}
+
+    .task-card h2[b-wvkfcn8eqq], h5[b-wvkfcn8eqq] {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+
+    
+    .task-card:hover[b-wvkfcn8eqq] {
+        transform: translateY(-4px); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    }
+
+   
+    .task-card h5[b-wvkfcn8eqq] {
+        margin: 0 0 12px 0; 
+        font-size: 18px;
+        color: #333; 
+        font-weight: bold;
+    }
+
+
+.task-buttons[b-wvkfcn8eqq] {
+    display: flex;
+    justify-content: space-around; 
+    gap: 8px; 
+}
+
+    
+    .task-buttons button[b-wvkfcn8eqq] {
+        background-color: #007bff; 
+        color: white; 
+        border-radius: 4px;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.2s;
+    }
+
+        .task-buttons button:hover[b-wvkfcn8eqq] {
+            background-color: #0056b3;
+        }
+
+
+@media (max-width: 1200px) {
+    .task-card[b-wvkfcn8eqq] {
+        width: calc(33.33% - 16px);
+    }
+}
+
+@media (max-width: 768px) {
+    .task-card[b-wvkfcn8eqq] {
+        width: calc(50% - 16px); 
+    }
+}
+
+@media (max-width: 480px) {
+    .task-card[b-wvkfcn8eqq] {
+        width: calc(100% - 16px); 
+    }
+}

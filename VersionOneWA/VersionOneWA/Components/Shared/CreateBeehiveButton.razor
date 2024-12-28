@@ -1,0 +1,14 @@
+﻿@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<button class="btn btn-warning" type="button" @onclick="CreateBeehive"><strong>Create Beehive</strong></button>
+
+
+
+@code {
+    private void CreateBeehive()
+    {
+        NavigationManager.NavigateTo("/edit-beehives");
+    }
+
+}

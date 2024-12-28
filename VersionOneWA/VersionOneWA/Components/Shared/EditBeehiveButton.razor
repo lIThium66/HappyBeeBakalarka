@@ -1,0 +1,17 @@
+﻿@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<button class="btn btn-danger" type="button" @onclick="EditBeehive"><strong>Edit Beehive</strong></button>
+
+
+
+@code {
+
+    [Parameter]
+    public int Id { get; set; }
+    private void EditBeehive()
+    {
+        NavigationManager.NavigateTo($"/edit-beehives/{Id}");
+    }
+
+}

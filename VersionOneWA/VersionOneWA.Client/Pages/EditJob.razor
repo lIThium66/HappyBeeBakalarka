@@ -23,7 +23,10 @@ else
         <div class="form-group">
             <label>Name</label>
             <InputText @bind-Value="job.Name" />
-            <ValidationMessage For="@(() => job.Name)" class="validation-message" />
+            <ValidationMessage For="@(() => job.Name)" class="validation-message" /> <br>
+            <label>Description</label>
+            <InputText @bind-Value="job.Description" />
+            <ValidationMessage For="@(() => job.Description)" class="validation-message" />
         </div> 
         <br>
         <button type="submit" class="btn btn-primary" disabled="@isSubmitting">Submit</button>
@@ -38,7 +41,7 @@ else
 
     [Parameter]
     public int? Id { get; set; }
-    Job job { get; set; } = new Job { Name = string.Empty };
+    Job job { get; set; } = new Job { Name = string.Empty, Description = string.Empty };
     EditContext editContext;
     private bool isSubmitting = false;
 
@@ -51,7 +54,7 @@ else
     {
         if (Id == null)
         {
-            job = new Job { Name = string.Empty };
+            job = new Job { Name = string.Empty, Description = string.Empty };
             editContext = new EditContext(job);
             return;
         }
@@ -103,8 +106,5 @@ else
         Console.WriteLine("Form submission failed due to invalid data.");
     }
 
-    // async Task DeleteJob()
-    // {
-    //     await JobServices.DeleteJob((int)Id);
-    // }
+  
 }

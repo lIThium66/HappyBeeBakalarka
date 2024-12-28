@@ -1,0 +1,81 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\VersionOneWA.bundle.scp.css",
+      "PackagePath": "staticwebassets\\VersionOneWA.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\SBtask.png",
+      "PackagePath": "staticwebassets\\SBtask.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\background1.png",
+      "PackagePath": "staticwebassets\\background1.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\background2.png",
+      "PackagePath": "staticwebassets\\background2.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\beehive.png",
+      "PackagePath": "staticwebassets\\beehive.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\beehiveBL.png",
+      "PackagePath": "staticwebassets\\beehiveBL.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\hcomb.png",
+      "PackagePath": "staticwebassets\\hcomb.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\keeperLogin.png",
+      "PackagePath": "staticwebassets\\keeperLogin.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\login.png",
+      "PackagePath": "staticwebassets\\login.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\task.png",
+      "PackagePath": "staticwebassets\\task.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\user.png",
+      "PackagePath": "staticwebassets\\user.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.VersionOneWA.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.VersionOneWA.props",
+      "PackagePath": "build\\VersionOneWA.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.VersionOneWA.props",
+      "PackagePath": "buildMultiTargeting\\VersionOneWA.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.VersionOneWA.props",
+      "PackagePath": "buildTransitive\\VersionOneWA.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

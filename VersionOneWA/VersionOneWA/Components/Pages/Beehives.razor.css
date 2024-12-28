@@ -1,4 +1,81 @@
-﻿h4 {
-    font-size: 12px;
-    font-style: italic;
+﻿
+.hives-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    justify-content: flex-start;
+}
+
+.hive-card {
+    background-color: gold;
+    border: 1px solid #daa520;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    width: calc(25% - 16px);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    flex-shrink: 0;
+}
+
+
+    .hive-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+.hive-card h2{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+    .hive-card h5 {
+        margin: 0 0 12px 0;
+        font-size: 18px;
+        color: #333;
+        font-weight: bold;
+    }
+
+
+.hive-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+}
+
+
+
+    .hive-buttons button {
+        background-color: #007bff;
+        color: white;
+        border-radius: 4px;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.2s;
+    }
+
+        .hive-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+
+@media (max-width: 1200px) {
+    .hive-card {
+        width: calc(33.33% - 16px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hive-card {
+        width: calc(50% - 16px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hive-card {
+        width: calc(100% - 16px);
+    }
 }

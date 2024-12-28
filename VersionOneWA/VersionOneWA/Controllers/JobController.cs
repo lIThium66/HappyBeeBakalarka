@@ -17,7 +17,7 @@ namespace VersionOneWA.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Job>> GetGameById(int id)
+        public async Task<ActionResult<Job>> GetJobById(int id)
         {
             var selectedJob = await _jobServices.GetJobById(id);
             return Ok(selectedJob);

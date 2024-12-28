@@ -1,0 +1,27 @@
+﻿@inject IBeehiveService BeehiveService
+
+<button class="btn btn-dark" type="button" @onclick="OnDelete">
+    <strong>Delete</strong>
+</button>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnBeehiveDeleted { get; set; } 
+
+  
+
+    private async Task OnDelete()
+    {
+        
+        await BeehiveService.DeleteBeehive(Id);
+
+      
+        if (OnBeehiveDeleted.HasDelegate)
+        {
+            await OnBeehiveDeleted.InvokeAsync(Id);
+        }
+    }
+}

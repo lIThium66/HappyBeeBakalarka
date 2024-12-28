@@ -35,7 +35,7 @@ builder.Services.AddDbContext<HappyBeeContext>(options =>
 
 
 builder.Services.AddScoped<IJobServices, JobServices>();
-
+builder.Services.AddScoped<IBeehiveService, BeehiveService>();
 
 builder.Services.AddAuthentication(options =>
     {

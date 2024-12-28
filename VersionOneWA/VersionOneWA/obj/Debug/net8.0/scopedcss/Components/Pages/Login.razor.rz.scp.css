@@ -1,0 +1,46 @@
+body[b-4ao00b4nyn] {
+    height: 100%;
+    margin: 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.login-okno[b-4ao00b4nyn] {
+    text-align: center;
+    border: 5px solid gold;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    border-radius: 100px;
+    
+}
+.accBox[b-4ao00b4nyn] {
+    margin-bottom: 10px;
+
+}
+
+input[type=text][b-4ao00b4nyn] {
+   
+    box-sizing: border-box;
+    border: 2px solid black;
+    outline: none;
+    font: bold;
+}
+
+
+input[type=text]:focus[b-4ao00b4nyn] {
+    border: 3px solid gold;
+}
+
+.passBox[b-4ao00b4nyn] {
+    padding: 8px;
+    margin-bottom: 10px;
+    
+}
+
+.login-okno img[b-4ao00b4nyn] {
+    display: block;
+    margin: 0 auto;
+
+}

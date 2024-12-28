@@ -1,28 +1,57 @@
 ﻿@page "/beehives"
-@using System.ComponentModel.DataAnnotations
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Beehives</title>
-</head>
+@rendermode InteractiveServer
+@attribute [StreamRendering]
+@inject IBeehiveService BeehiveService
 
 
 <h2>Beehives</h2>
 
 <h4>Add your new beehive...</h4>
-<div>
+ <br>
+ <CreateBeehiveButton></CreateBeehiveButton>
 
-    <button type="button" class="btn btn-warning"> <strong>ADD BEEHIVE</strong></button>
+@if (beehives == null)
+{
+    <span>Loading...</span>
+    <br>
+}
+else if (beehives.Count == 0)
+{
+    <span>No tasks found.</span>
+    <br>
+}
+else
+{
+    <div class="hives-container">
+        @foreach (var beehive in beehives)
+        {
+            <div class="hive-card">
+                <h2>@beehive.Name</h2>
+                <div class="hive-buttons">
+                    <EditBeehiveButton Id="beehive.Id" />
+                    <DeleteBeehiveButton Id="beehive.Id" OnBeehiveDeleted="HandleBeehiveDeleted" />
+                </div>
+            </div>
+        }
 
-</div>
+    </div>
+}
 
-</html>
 
 @code {
 
-    
+    List<Beehive>? beehives = null;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        beehives = await BeehiveService.GetAllBeehives();
+    }
+
+    private async Task HandleBeehiveDeleted(int id)
+    {
+        beehives = beehives?.Where(beehive => beehive.Id != id).ToList();
+        StateHasChanged();
+    }
 
 }

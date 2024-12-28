@@ -19,6 +19,13 @@
     flex-shrink: 0; 
 }
 
+    .task-card h2, h5 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+
     
     .task-card:hover {
         transform: translateY(-4px); 
