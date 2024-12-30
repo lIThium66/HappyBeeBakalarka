@@ -49,6 +49,7 @@ namespace VersionOneWA.Shared.Services
             {
                 editedJob.Name = job.Name;
                 editedJob.Description = job.Description;
+                editedJob.Priority = job.Priority;
                 await _happyBeeContext.SaveChangesAsync();
                 return editedJob;
             }

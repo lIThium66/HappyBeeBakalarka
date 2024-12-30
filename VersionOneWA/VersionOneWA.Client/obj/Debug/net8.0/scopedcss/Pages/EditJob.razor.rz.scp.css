@@ -1,2 +1,86 @@
-body[b-77bj8bxp5h] {
+/* General styling for the form container */
+.form-container[b-77bj8bxp5h] {
+    margin: 20px auto;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border: 2px solid gold; /* Gold border for the entire container */
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 8px; /* Rounded corners for a polished look */
+    background-color: #fff; /* Optional: white background */
 }
+
+/* Styling for each form group */
+.form-group[b-77bj8bxp5h] {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+    /* Input fields styling */
+    .form-group label[b-77bj8bxp5h] {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"][b-77bj8bxp5h],
+    .form-group textarea[b-77bj8bxp5h] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        line-height: 1.5; /* Ensures text spacing */
+        overflow-wrap: break-word; /* Allows long text to wrap */
+        word-wrap: break-word; /* Ensures compatibility for older browsers */                                                               
+        word-break: break-word; /* Ensures words break within bounds */
+    }
+
+    /* Specific styling for the description field */
+    .form-group.desc input[b-77bj8bxp5h] {
+        height: 300px; /* Further increased height for the description field */
+        resize: none;
+        display: block;
+        overflow-y: auto; /* Allows scrolling for overflow text */
+        text-align: start;
+        box-sizing: border-box; /* Ensures padding and border are included in height */
+    }
+
+/* Styling for validation messages */
+.validation-message[b-77bj8bxp5h] {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.desc-text[b-77bj8bxp5h] {
+    height: 100%; /* Pevná výška */
+    width: calc(100% - 20px); /* Šírka gridu mínus padding */
+    padding: 10px; /* Vnútorný odstup od okrajov */
+    box-sizing: border-box; /* Zabezpečí, že padding neovplyvní šírku */
+    text-align: left; /* Zarovná text doľava */
+    vertical-align: top; /* Text začína odhora */
+    overflow-y: auto; /* Povolenie posuvníka pre dlhší text */
+    resize: none; /* Zakázanie zmeny veľkosti */
+    font-family: inherit; /* Zdedí štýl písma */
+    font-size: 14px; /* Uprav si podľa potreby */
+}
+
+    
+
+/* Submit button styling */
+.btn-primary[b-77bj8bxp5h] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    .btn-primary:disabled[b-77bj8bxp5h] {
+        background-color: #cccccc;
+        cursor: not-allowed;
+    }

@@ -34,7 +34,7 @@ else
     <div class="tasks-container">
         @foreach (var job in jobs)
         {
-            <div class="task-card">
+            <div class="task-card" style="@GetBorderStyle(job.Priority)">
             <h2>@job.Name</h2>
             <h5>@job.Description</h5>
                 <div class="task-buttons">
@@ -61,5 +61,15 @@ else
         jobs = jobs?.Where(job => job.Id != id).ToList(); 
         StateHasChanged(); 
     }
-  
+
+    private string GetBorderStyle(int priority)
+    {
+        return priority switch
+        {
+            1 => "border: 2px solid red;",
+            2 => "border: 2px solid green;",
+            3 => "border: 2px solid black;",
+            _ => "border: 2px solid black;" // Defaultný okraj
+        };
+    }
 }

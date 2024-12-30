@@ -19,15 +19,23 @@ else
 <div class="form-container">
     <EditForm EditContext="editContext" OnValidSubmit="HandleSubmit" OnInvalidSubmit="HandleInvalidSubmit" FormName="EditTask">
         <DataAnnotationsValidator />
-
         <div class="form-group">
             <label>Name</label>
             <InputText @bind-Value="job.Name" />
-            <ValidationMessage For="@(() => job.Name)" class="validation-message" /> <br>
+          @* <ValidationMessage For="@(() => job.Name)" class="validation-message" /> *@ 
+            <br>
             <label>Description</label>
-            <InputText @bind-Value="job.Description" />
-            <ValidationMessage For="@(() => job.Description)" class="validation-message" />
-        </div> 
+            <textarea class="desc-text" @bind="job.Description"></textarea>
+            @*<ValidationMessage For="@(() => job.Description)" class="validation-message" />*@
+
+            <label>Priority</label>
+            <select class="form-control" @bind="job.Priority">
+                <option value="1">1 - Urgent</option>
+                <option value="2">2 - Important</option>
+                <option value="3">3 - Not Urgent</option>
+            </select>
+
+        </div>
         <br>
         <button type="submit" class="btn btn-primary" disabled="@isSubmitting">Submit</button>
 
@@ -41,8 +49,8 @@ else
 
     [Parameter]
     public int? Id { get; set; }
-    Job job { get; set; } = new Job { Name = string.Empty, Description = string.Empty };
-    EditContext editContext;
+    Job job { get; set; } = new Job { Name = string.Empty, Description = string.Empty, Priority = -1};
+    EditContext editContext = null!;
     private bool isSubmitting = false;
 
     protected override void OnInitialized()
@@ -54,7 +62,7 @@ else
     {
         if (Id == null)
         {
-            job = new Job { Name = string.Empty, Description = string.Empty };
+            job = new Job { Name = string.Empty, Description = string.Empty, Priority = -1                                                                                                                                                                                                                                                                                   };
             editContext = new EditContext(job);
             return;
         }
@@ -105,6 +113,4 @@ else
     {
         Console.WriteLine("Form submission failed due to invalid data.");
     }
-
-  
 }
