@@ -25,7 +25,11 @@ else
             <InputText @bind-Value="beehive.Name"/><br>
             @*<ValidationMessage For="@(() => beehive.Name)" class="validation-message" /> <br>*@
             <label>Beehive weight</label>
-            <InputNumber @bind-Value="beehive.beehiveWeight"/>
+            <InputNumber @bind-Value="beehive.beehiveWeight" TValue="double?"/>
+            <label>Number of bees</label>
+            <InputNumber @bind-Value="beehive.numberOfBees" TValue="int?"/>
+            <label>Queen's age</label>
+            <InputNumber @bind-Value="beehive.QueensAge" TValue="int?"/>
         </div>
         <br>
         <button type="submit" class="btn btn-primary" disabled="@isSubmitting">Submit</button>
@@ -65,6 +69,7 @@ else
 
     async Task HandleSubmit()
     {
+        GetNumberOfBees();
         Console.WriteLine($"Beehive nazov: {beehive.Name}");
         if (beehive.Name == string.Empty)
         {
@@ -106,10 +111,13 @@ else
         Console.WriteLine("Form submission failed due to invalid data.");
     }
 
-    private double? getNumberOfBees()
+    private double? GetNumberOfBees()
     {
         double weight = beehive.beehiveWeight ?? 0;
-        beehive.numberOfBees = (int?)Math.Ceiling((weight / 0.000120) * 2);
+        if (beehive.beehiveWeight.HasValue)
+        {
+            beehive.numberOfBees = (int?)Math.Ceiling((weight / 0.000120) * 2);
+        }
         return beehive.numberOfBees;
     }
 

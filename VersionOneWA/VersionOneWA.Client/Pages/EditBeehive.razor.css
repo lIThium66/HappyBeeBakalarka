@@ -1,2 +1,29 @@
-﻿body {
+﻿.form-container {
+    width: 100%; /* Nastaví šírku formulára na celú šírku okna */
+    max-width: 600px; /* Maximálna šírka formulára */
+    margin: 0 auto; /* Centrovanie formulára */
+    padding: 20px;
+    border: 2px solid #ffcc00;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.InputText,
+.InputNumber {
+    width: 100%; /* Šírka na celú šírku kontajnera */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Zabezpečí, že padding sa započíta do šírky */
 }

@@ -1,3 +1,10 @@
+C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.AssemblyInfo.cs
+C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.sourcelink.json
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\bin\Debug\net8.0\wwwroot\_framework\Azure.Core.wasm
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\bin\Debug\net8.0\wwwroot\_framework\Azure.Identity.wasm
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\bin\Debug\net8.0\wwwroot\_framework\blazor.boot.json
@@ -708,13 +715,6 @@ C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.C
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\bin\Debug\net8.0\icudt_no_CJK.dat
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\bin\Debug\net8.0\VersionOneWA.Shared.dll
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\bin\Debug\net8.0\VersionOneWA.Shared.pdb
-C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.csproj.AssemblyReference.cache
-C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.AssemblyInfoInputs.cache
-C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.AssemblyInfo.cs
-C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.csproj.CoreCompileInputs.cache
-C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.sourcelink.json
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\webcil\Azure.Core.wasm
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\webcil\Azure.Identity.wasm
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Authorization.wasm
@@ -948,6 +948,7 @@ C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.C
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.VersionOneWA.Client.props
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.VersionOneWA.Client.props
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\scopedcss\Pages\EditBeehive.razor.rz.scp.css
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\scopedcss\Pages\EditJob.razor.rz.scp.css
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\scopedcss\bundle\VersionOneWA.Client.styles.css
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\scopedcss\projectbundle\VersionOneWA.Client.bundle.scp.css
@@ -1193,4 +1194,3 @@ C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.C
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\refint\VersionOneWA.Client.dll
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\VersionOneWA.Client.pdb
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\ref\VersionOneWA.Client.dll
-C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA.Client\obj\Debug\net8.0\scopedcss\Pages\EditBeehive.razor.rz.scp.css
