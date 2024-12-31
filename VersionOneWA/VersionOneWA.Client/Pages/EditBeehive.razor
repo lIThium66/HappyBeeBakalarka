@@ -22,8 +22,10 @@ else
 
         <div class="form-group">
             <label>Name</label>
-            <InputText @bind-Value="beehive.Name"/>
-            <ValidationMessage For="@(() => beehive.Name)" class="validation-message" /> <br>
+            <InputText @bind-Value="beehive.Name"/><br>
+            @*<ValidationMessage For="@(() => beehive.Name)" class="validation-message" /> <br>*@
+            <label>Beehive weight</label>
+            <InputNumber @bind-Value="beehive.beehiveWeight"/>
         </div>
         <br>
         <button type="submit" class="btn btn-primary" disabled="@isSubmitting">Submit</button>
@@ -38,7 +40,7 @@ else
 
     [Parameter]
     public int? Id { get; set; }
-    Beehive beehive { get; set; } = new Beehive { Name = string.Empty };
+    Beehive beehive { get; set; } = new Beehive { Name = string.Empty, beehiveWeight = 0, numberOfBees = 0, QueensAge = 0 };
     EditContext editContext;
     private bool isSubmitting = false;
 
@@ -51,7 +53,7 @@ else
     {
         if (Id == null)
         {
-            beehive = new Beehive { Name = string.Empty };
+            beehive = new Beehive { Name = string.Empty, beehiveWeight = 0, numberOfBees = 0, QueensAge = 0 };
             editContext = new EditContext(beehive);
             return;
         }
@@ -104,5 +106,11 @@ else
         Console.WriteLine("Form submission failed due to invalid data.");
     }
 
+    private double? getNumberOfBees()
+    {
+        double weight = beehive.beehiveWeight ?? 0;
+        beehive.numberOfBees = (int?)Math.Ceiling((weight / 0.000120) * 2);
+        return beehive.numberOfBees;
+    }
 
 }

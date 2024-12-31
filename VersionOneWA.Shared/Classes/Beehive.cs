@@ -11,8 +11,10 @@ namespace VersionOneWA.Shared.Classes
         [Required(ErrorMessage = "Please give this beehive a name! ")]
         public String Name { get; set; } = null!;
 
-        public int numberOfBees { get; set; }
+        public int? numberOfBees { get; set; } = 0;
 
-        public int QueensAge { get; set; }
+        public double? beehiveWeight { get; set; } = 0;
+
+        public int? QueensAge { get; set; } = 0;
     }
 }

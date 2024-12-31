@@ -43,6 +43,9 @@ namespace VersionOneWA.Shared.Services
             if (editedBeehive != null)
             {
                 editedBeehive.Name = beehive.Name;
+                editedBeehive.beehiveWeight = beehive.beehiveWeight;
+                editedBeehive.numberOfBees = beehive.numberOfBees;
+                editedBeehive.QueensAge = beehive.QueensAge;
                 await _happyBeeContext.SaveChangesAsync();
                 return editedBeehive;
             }
