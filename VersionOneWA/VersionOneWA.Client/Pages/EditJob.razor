@@ -32,7 +32,7 @@ else
             <select class="form-control" @bind="job.Priority">
                 <option value="1">1 - Urgent</option>
                 <option value="2">2 - Important</option>
-                <option value="3">3 - Not Urgent</option>
+                <option value="3" selected>3 - Not Urgent</option>
             </select>
 
         </div>
@@ -49,7 +49,7 @@ else
 
     [Parameter]
     public int? Id { get; set; }
-    Job job { get; set; } = new Job { Name = string.Empty, Description = string.Empty, Priority = -1};
+    Job job { get; set; } = new Job { Name = string.Empty, Description = string.Empty, Priority = 3};
     EditContext editContext = null!;
     private bool isSubmitting = false;
 
@@ -62,7 +62,7 @@ else
     {
         if (Id == null)
         {
-            job = new Job { Name = string.Empty, Description = string.Empty, Priority = -1                                                                                                                                                                                                                                                                                   };
+            job = new Job { Name = string.Empty, Description = string.Empty, Priority = 3                                                                                                                                                                                                                                                                                   };
             editContext = new EditContext(job);
             return;
         }

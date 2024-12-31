@@ -35,7 +35,7 @@ else
         @foreach (var job in jobs)
         {
             <div class="task-card" style="@GetBorderStyle(job.Priority)">
-            <h2>@job.Name</h2>
+            <h2>@job.Name @job.Priority</h2>
             <h5>@job.Description</h5>
                 <div class="task-buttons">
                      <EditJobButton Id="job.Id"/>
