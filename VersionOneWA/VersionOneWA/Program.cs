@@ -8,6 +8,8 @@ using VersionOneWA.Components.Account;
 using VersionOneWA.Shared.Services;
 using VersionOneWA.Shared.Data;
 using VersionOneWA.Data;
+//using Microsoft.AspNetCore.Identity;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,7 +35,6 @@ builder.Services.AddScoped(http => new HttpClient
 builder.Services.AddDbContext<HappyBeeContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
 builder.Services.AddScoped<IJobServices, JobServices>();
 builder.Services.AddScoped<IBeehiveService, BeehiveService>();
 
@@ -50,6 +51,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddSignInManager()
     .AddDefaultTokenProviders();

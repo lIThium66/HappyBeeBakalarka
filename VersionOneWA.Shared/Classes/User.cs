@@ -12,6 +12,7 @@ namespace VersionOneWA.Shared.Classes
         [Required]
         public string Email { get; set; } = null!;
 
+
         public string? PhoneNumber { get; set; } 
 
     }
