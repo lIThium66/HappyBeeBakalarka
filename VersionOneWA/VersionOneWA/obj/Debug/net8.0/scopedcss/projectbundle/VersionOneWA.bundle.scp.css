@@ -305,51 +305,96 @@ main[b-tc53vxo59z] {
     }
 }
 /* _content/VersionOneWA/Components/Pages/Login.razor.rz.scp.css */
-body[b-4ao00b4nyn] {
-    height: 100%;
-    margin: 20px;
+/* Nastavení celého těla stránky */
+html[b-4ao00b4nyn], body[b-4ao00b4nyn] {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Zakáže posouvání */
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa; /* Světlé pozadí */
 }
 
-.login-okno[b-4ao00b4nyn] {
-    text-align: center;
-    border: 5px solid gold;
+/* Přihlašovací box - umístěný přesně do středu */
+.login-container[b-4ao00b4nyn] {
+    width: 320px; /* Pevná šířka */
     padding: 20px;
-    width: auto;
-    height: auto;
-    border-radius: 100px;
-    
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.accBox[b-4ao00b4nyn] {
+
+    /* Zmenšení loga */
+    .login-container img[b-4ao00b4nyn] {
+        max-width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+/* Přizpůsobení vstupních polí */
+.form-floating[b-4ao00b4nyn] {
     margin-bottom: 10px;
-
+    width: 100%;
 }
 
-input[type=text][b-4ao00b4nyn] {
-   
-    box-sizing: border-box;
-    border: 2px solid black;
-    outline: none;
-    font: bold;
-}
-
-
-input[type=text]:focus[b-4ao00b4nyn] {
-    border: 3px solid gold;
-}
-
-.passBox[b-4ao00b4nyn] {
+input[b-4ao00b4nyn] {
+    width: 100%;
     padding: 8px;
-    margin-bottom: 10px;
-    
+    border-radius: 6px;
+    border: 2px solid black;
+    font-size: 14px;
 }
 
-.login-okno img[b-4ao00b4nyn] {
-    display: block;
-    margin: 0 auto;
+/* Přizpůsobíme tlačítko */
+button[b-4ao00b4nyn] {
+    width: 100%;
+    padding: 8px;
+    background-color: gold;
+    color: black;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
+    button:hover[b-4ao00b4nyn] {
+        background-color: black;
+        color: gold;
+    }
+
+/* Odkazy - sjednocení */
+.login-links[b-4ao00b4nyn] {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+    .login-links a[b-4ao00b4nyn] {
+        text-decoration: none;
+        color: #007bff;
+        font-size: 12px;
+    }
+
+        .login-links a:hover[b-4ao00b4nyn] {
+            text-decoration: underline;
+        }
+
+/* Texty v login boxu */
+h1[b-4ao00b4nyn] {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.checkbox label[b-4ao00b4nyn] {
+    font-size: 12px;
 }
 /* _content/VersionOneWA/Components/Pages/Tasks.razor.rz.scp.css */
 
