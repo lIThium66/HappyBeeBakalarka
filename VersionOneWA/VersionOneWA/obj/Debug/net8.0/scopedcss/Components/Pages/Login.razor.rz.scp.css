@@ -1,17 +1,15 @@
-/* Nastavení celého těla stránky */
 html[b-4ao00b4nyn], body[b-4ao00b4nyn] {
     height: 100vh;
     margin: 0;
-    overflow: hidden; /* Zakáže posouvání */
+    overflow: hidden; 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f8f9fa; /* Světlé pozadí */
+    background-color: #f8f9fa;
 }
 
-/* Přihlašovací box - umístěný přesně do středu */
 .login-container[b-4ao00b4nyn] {
-    width: 320px; /* Pevná šířka */
+    width: 320px; 
     padding: 20px;
     text-align: center;
     background: white;
@@ -23,14 +21,12 @@ html[b-4ao00b4nyn], body[b-4ao00b4nyn] {
     justify-content: center;
 }
 
-    /* Zmenšení loga */
     .login-container img[b-4ao00b4nyn] {
         max-width: 100px;
         height: auto;
         margin-bottom: 10px;
     }
 
-/* Přizpůsobení vstupních polí */
 .form-floating[b-4ao00b4nyn] {
     margin-bottom: 10px;
     width: 100%;
@@ -44,7 +40,6 @@ input[b-4ao00b4nyn] {
     font-size: 14px;
 }
 
-/* Přizpůsobíme tlačítko */
 button[b-4ao00b4nyn] {
     width: 100%;
     padding: 8px;
@@ -62,7 +57,6 @@ button[b-4ao00b4nyn] {
         color: gold;
     }
 
-/* Odkazy - sjednocení */
 .login-links[b-4ao00b4nyn] {
     margin-top: 15px;
     display: flex;
@@ -80,7 +74,6 @@ button[b-4ao00b4nyn] {
             text-decoration: underline;
         }
 
-/* Texty v login boxu */
 h1[b-4ao00b4nyn] {
     font-size: 1.5rem;
     margin-bottom: 10px;

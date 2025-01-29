@@ -19,7 +19,7 @@ main[b-tc53vxo59z] {
 }
 
 .sidebar[b-tc53vxo59z] {
-    background-image: linear-gradient(180deg, rgb(255, 223, 0) 0%, gold 70%);
+    background-image: linear-gradient(180deg, rgb(255, 223, 0) 0%, gold 90%);
     /*background-color: goldenrod;*/
 }
 /*
@@ -306,21 +306,126 @@ main[b-tc53vxo59z] {
         width: calc(100% - 16px);
     }
 }
+/* _content/VersionOneWA/Components/Pages/Home.razor.rz.scp.css */
+/* Hlavný kontajner pre všetky tasky */
+.tasks-container[b-kxaw4yvz8h] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    justify-content: flex-start; /* Zarovná tasky na ľavý kraj */
+    align-items: flex-start;
+}
+
+/* Všetky kategórie taskov */
+.deadline-tasks-container[b-kxaw4yvz8h], .urgent-tasks-container[b-kxaw4yvz8h], .upcoming-tasks-container[b-kxaw4yvz8h] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start; /* Zarovná od ľavého kraja */
+    align-items: stretch;
+}
+
+/* Tasky po deadline budú prvé */
+.deadline-tasks-container[b-kxaw4yvz8h] {
+    order: -1; /* Prioritné umiestnenie */
+}
+
+/* Každý task bude rovnako široký a vysoký */
+.task-card[b-kxaw4yvz8h] {
+    background-color: gold;
+    border: 3px solid #daa520;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px; /* Rovnaká šírka pre konzistentné rozloženie */
+    min-height: 180px; /* Rovnaká výška pre všetky */
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Rovnaká veľkosť pre všetky tasky */
+.deadline-tasks-container .task-card[b-kxaw4yvz8h],
+.urgent-tasks-container .task-card[b-kxaw4yvz8h],
+.upcoming-tasks-container .task-card[b-kxaw4yvz8h] {
+    flex: none;
+    width: 250px;
+    min-height: 180px;
+}
+
+/* Urgentné úlohy (červený rám) */
+.urgent[b-kxaw4yvz8h] {
+    border: 3px solid red;
+}
+
+/* Tasky po deadline (zelený rám) */
+.deadline-task[b-kxaw4yvz8h] {
+    border: 3px solid red;
+    order: -1; /* Zabezpečí, že budú prvé */
+}
+
+/* Hover efekt */
+.task-card:hover[b-kxaw4yvz8h] {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Štýly pre text */
+.task-date[b-kxaw4yvz8h] {
+    font-weight: bold;
+    color: #333;
+}
+
+.deadline-passed[b-kxaw4yvz8h] {
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.time-remaining[b-kxaw4yvz8h] {
+    color: green;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Responzivita - všetky tasky zostanú rovnako veľké */
+@media (max-width: 1200px) {
+    .task-card[b-kxaw4yvz8h] {
+        width: calc(33.33% - 16px);
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .task-card[b-kxaw4yvz8h] {
+        width: calc(50% - 16px);
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .task-card[b-kxaw4yvz8h] {
+        width: 100%;
+        min-height: auto;
+    }
+}
 /* _content/VersionOneWA/Components/Pages/Login.razor.rz.scp.css */
-/* Nastavení celého těla stránky */
 html[b-4ao00b4nyn], body[b-4ao00b4nyn] {
     height: 100vh;
     margin: 0;
-    overflow: hidden; /* Zakáže posouvání */
+    overflow: hidden; 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f8f9fa; /* Světlé pozadí */
+    background-color: #f8f9fa;
 }
 
-/* Přihlašovací box - umístěný přesně do středu */
 .login-container[b-4ao00b4nyn] {
-    width: 320px; /* Pevná šířka */
+    width: 320px; 
     padding: 20px;
     text-align: center;
     background: white;
@@ -332,14 +437,12 @@ html[b-4ao00b4nyn], body[b-4ao00b4nyn] {
     justify-content: center;
 }
 
-    /* Zmenšení loga */
     .login-container img[b-4ao00b4nyn] {
         max-width: 100px;
         height: auto;
         margin-bottom: 10px;
     }
 
-/* Přizpůsobení vstupních polí */
 .form-floating[b-4ao00b4nyn] {
     margin-bottom: 10px;
     width: 100%;
@@ -353,7 +456,6 @@ input[b-4ao00b4nyn] {
     font-size: 14px;
 }
 
-/* Přizpůsobíme tlačítko */
 button[b-4ao00b4nyn] {
     width: 100%;
     padding: 8px;
@@ -371,7 +473,6 @@ button[b-4ao00b4nyn] {
         color: gold;
     }
 
-/* Odkazy - sjednocení */
 .login-links[b-4ao00b4nyn] {
     margin-top: 15px;
     display: flex;
@@ -389,7 +490,6 @@ button[b-4ao00b4nyn] {
             text-decoration: underline;
         }
 
-/* Texty v login boxu */
 h1[b-4ao00b4nyn] {
     font-size: 1.5rem;
     margin-bottom: 10px;

@@ -34,7 +34,10 @@ else
                 <option value="2">2 - Important</option>
                 <option value="3" selected>3 - Not Urgent</option>
             </select>
-
+            
+            <label>Date and Time</label>
+            <InputDate @bind-Value="job.JobDate"/>
+           
         </div>
         <br>
         <button type="submit" class="btn btn-primary" disabled="@isSubmitting">Submit</button>

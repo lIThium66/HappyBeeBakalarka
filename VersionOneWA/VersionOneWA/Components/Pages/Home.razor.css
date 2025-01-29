@@ -1,0 +1,106 @@
+﻿/* Hlavný kontajner pre všetky tasky */
+.tasks-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    justify-content: flex-start; /* Zarovná tasky na ľavý kraj */
+    align-items: flex-start;
+}
+
+/* Všetky kategórie taskov */
+.deadline-tasks-container, .urgent-tasks-container, .upcoming-tasks-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start; /* Zarovná od ľavého kraja */
+    align-items: stretch;
+}
+
+/* Tasky po deadline budú prvé */
+.deadline-tasks-container {
+    order: -1; /* Prioritné umiestnenie */
+}
+
+/* Každý task bude rovnako široký a vysoký */
+.task-card {
+    background-color: gold;
+    border: 3px solid #daa520;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px; /* Rovnaká šírka pre konzistentné rozloženie */
+    min-height: 180px; /* Rovnaká výška pre všetky */
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Rovnaká veľkosť pre všetky tasky */
+.deadline-tasks-container .task-card,
+.urgent-tasks-container .task-card,
+.upcoming-tasks-container .task-card {
+    flex: none;
+    width: 250px;
+    min-height: 180px;
+}
+
+/* Urgentné úlohy (červený rám) */
+.urgent {
+    border: 3px solid red;
+}
+
+/* Tasky po deadline (zelený rám) */
+.deadline-task {
+    border: 3px solid red;
+    order: -1; /* Zabezpečí, že budú prvé */
+}
+
+/* Hover efekt */
+.task-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Štýly pre text */
+.task-date {
+    font-weight: bold;
+    color: #333;
+}
+
+.deadline-passed {
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.time-remaining {
+    color: green;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Responzivita - všetky tasky zostanú rovnako veľké */
+@media (max-width: 1200px) {
+    .task-card {
+        width: calc(33.33% - 16px);
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .task-card {
+        width: calc(50% - 16px);
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .task-card {
+        width: 100%;
+        min-height: auto;
+    }
+}

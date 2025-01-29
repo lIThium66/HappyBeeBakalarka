@@ -1,18 +1,106 @@
 ﻿@page "/"
+@inject IJobServices JobService
+@attribute [StreamRendering]
 
-
-
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <title>Home</title>
 </head>
+
+
 <h1>HAPPY BEE</h1>
 
-</html>
+@if (jobs.Count == 0 || jobs == null)
+{
+    <div class="no-tasks-container">
+        <p>You don't have any tasks yet.</p>
+        <hr>
+    </div>
+}
 
+<div class="urgent-tasks-container">
+    @for (int i = 0; i < jobs.Count; i++)
+    {
+        if (jobs[i].Priority == 1)
+        {
+            <div class="task-card urgent">
+                <h2>@jobs[i].Name</h2>
+                @if (jobs[i].JobDate.HasValue)
+                {
+                    <p class="task-date">@jobs[i].JobDate?.ToString("dd.MM.yyyy")</p>
 
+                    @if (jobs[i].JobDate < DateTime.Now)
+                    {
+                        <p class="deadline-passed">DEADLINE HAS PASSED!</p>
+                    }
+                    else
+                    {
+                        <p class="time-remaining">@GetTimeRemaining(jobs[i].JobDate.Value)</p>
+                    }
+                }
+            </div>
+        }
+    }
+</div>
+
+<div class="deadline-tasks-container">
+    @for (int i = 0; i < jobs.Count; i++)
+    {
+        if (jobs[i].Priority != 1 && jobs[i].JobDate.HasValue && jobs[i].JobDate <= DateTime.Now.AddDays(3))
+        {
+            <div class="task-card">
+                <h2>@jobs[i].Name</h2>
+                <p class="task-date">@jobs[i].JobDate?.ToString("dd.MM.yyyy")</p>
+
+                @if (jobs[i].JobDate < DateTime.Now)
+                {
+                    <p class="deadline-passed">DEADLINE HAS PASSED!</p>
+                }
+                else
+                {
+                    <p class="time-remaining">@GetTimeRemaining(jobs[i].JobDate.Value)</p>
+                }
+            </div>
+        }
+    }
+</div>
+
+@code {
+
+    List<Job>? jobs = new List<Job>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        jobs = await JobService.GetAllJobs();
+    }
+
+    bool atLeastOneUrgent()
+    {
+        @for (int i = 0; i < jobs.Count; i++)
+        {
+            @if(jobs[i].Priority == 1)
+            return true;  
+        }
+        return false;
+    }
+
+    string GetTimeRemaining(DateTime deadline)
+    {
+        TimeSpan remaining = deadline - DateTime.Now;
+        if (remaining.TotalSeconds <= 0)
+            return "DEADLINE HAS PASSED!";
+        if (remaining.Days <= 0)
+        {
+            return $"Time remaining: {remaining.Hours} hours {remaining.Minutes} minutes";
+        }
+        else
+        {
+            return $"Time remaining: {remaining.Days} days {remaining.Hours} hours {remaining.Minutes} minutes";
+        }
+
+    }
+
+}
 
 
 

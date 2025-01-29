@@ -16,14 +16,7 @@ namespace VersionOneWA.Shared.Classes
 
         public bool? IsCompleted { get; set; }
 
-        
-
-        public Job() {
-            
-        
-        }
-
-    
+        public DateTime? JobDate { get; set; }
 
     }
 }
