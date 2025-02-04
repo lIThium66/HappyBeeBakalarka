@@ -42,10 +42,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEV4dGVybmFsTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Account/Pages/ForgotPassword.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEZvcmdvdFBhc3N3b3JkLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Account/Pages/ForgotPasswordConfirmation.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEZvcmdvdFBhc3N3b3JkQ29uZmlybWF0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -124,10 +120,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Account/Pages/Manage/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxfSW1wb3J0cy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Account/Pages/Register.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXFJlZ2lzdGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Account/Pages/RegisterConfirmation.razor]
@@ -238,6 +230,10 @@ build_metadata.AdditionalFiles.CssScope = b-h5jzmlawbg
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCZWVoaXZlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-umct12idxl
 
+[C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Pages/ForgotPassword.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGb3Jnb3RQYXNzd29yZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-u5ms88q72c
+
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-kxaw4yvz8h
@@ -245,6 +241,10 @@ build_metadata.AdditionalFiles.CssScope = b-kxaw4yvz8h
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-4ao00b4nyn
+
+[C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWdpc3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-5uni2f3hkn
 
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Pages/Tasks.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUYXNrcy5yYXpvcg==

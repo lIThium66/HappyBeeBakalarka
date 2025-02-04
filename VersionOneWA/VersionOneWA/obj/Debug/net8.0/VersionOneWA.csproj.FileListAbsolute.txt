@@ -202,3 +202,5 @@ C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA\o
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA\obj\Debug\net8.0\VersionOneWA.genruntimeconfig.cache
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA\obj\Debug\net8.0\ref\VersionOneWA.dll
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA\obj\Debug\net8.0\scopedcss\Components\Pages\Home.razor.rz.scp.css
+C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA\obj\Debug\net8.0\scopedcss\Components\Pages\Register.razor.rz.scp.css
+C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA\VersionOneWA\obj\Debug\net8.0\scopedcss\Components\Pages\ForgotPassword.razor.rz.scp.css

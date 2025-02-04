@@ -39,9 +39,9 @@
             <button type="submit">Log in</button>
 
             <div class="login-links">
-                <a href="Account/ForgotPassword">Forgot your password?</a>
-                <a href="@(NavigationManager.GetUriWithQueryParameters("Account/Register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))">Register as a new user</a>
-                <a href="Account/ResendEmailConfirmation">Resend email confirmation</a>
+                <a href="/forgotPassword">Forgot your password?</a>
+                <a href="@(NavigationManager.GetUriWithQueryParameters("/register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))">Register as a new user</a>
+               @* <a href="Account/ResendEmailConfirmation">Resend email confirmation</a> *@
             </div>
         </EditForm>
     </div>

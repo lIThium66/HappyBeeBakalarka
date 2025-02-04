@@ -19,7 +19,10 @@ main[b-tc53vxo59z] {
 .sidebar[b-tc53vxo59z] {
     background-image: linear-gradient(180deg, rgb(255, 223, 0) 0%, gold 90%);
     /*background-color: goldenrod;*/
+    height: 100vh;
+    overflow-y: auto;
 }
+   
 /*
 .bkgrnd-image { /* honey comb obrazok 
     background-image: url("hcomb.png");
@@ -304,6 +307,90 @@ main[b-tc53vxo59z] {
         width: calc(100% - 16px);
     }
 }
+/* _content/VersionOneWA/Components/Pages/ForgotPassword.razor.rz.scp.css */
+html[b-u5ms88q72c], body[b-u5ms88q72c] {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.forgot-password-container[b-u5ms88q72c] {
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+    .forgot-password-container h1[b-u5ms88q72c] {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+.form-floating[b-u5ms88q72c] {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input[b-u5ms88q72c] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid black;
+    font-size: 14px;
+}
+
+button[b-u5ms88q72c] {
+    width: 100%;
+    padding: 8px;
+    background-color: gold;
+    color: black;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    button:hover[b-u5ms88q72c] {
+        background-color: black;
+        color: gold;
+    }
+
+.validation-summary[b-u5ms88q72c] {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.forgot-password-links[b-u5ms88q72c] {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+    .forgot-password-links a[b-u5ms88q72c] {
+        text-decoration: none;
+        color: #007bff;
+        font-size: 12px;
+    }
+
+        .forgot-password-links a:hover[b-u5ms88q72c] {
+            text-decoration: underline;
+        }
 /* _content/VersionOneWA/Components/Pages/Home.razor.rz.scp.css */
 /* Hlavný kontajner pre všetky tasky */
 .tasks-container[b-kxaw4yvz8h] {
@@ -423,7 +510,7 @@ html[b-4ao00b4nyn], body[b-4ao00b4nyn] {
 }
 
 .login-container[b-4ao00b4nyn] {
-    width: 320px; 
+    width: 320px;
     padding: 20px;
     text-align: center;
     background: white;
@@ -433,6 +520,10 @@ html[b-4ao00b4nyn], body[b-4ao00b4nyn] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
     .login-container img[b-4ao00b4nyn] {
@@ -496,6 +587,88 @@ h1[b-4ao00b4nyn] {
 .checkbox label[b-4ao00b4nyn] {
     font-size: 12px;
 }
+/* _content/VersionOneWA/Components/Pages/Register.razor.rz.scp.css */
+
+html[b-5uni2f3hkn], body[b-5uni2f3hkn] {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.register-container[b-5uni2f3hkn] {
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+    .register-container h1[b-5uni2f3hkn] {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+.form-floating[b-5uni2f3hkn] {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input[b-5uni2f3hkn] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid black;
+    font-size: 14px;
+}
+
+button[b-5uni2f3hkn] {
+    width: 100%;
+    padding: 8px;
+    background-color: gold;
+    color: black;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    button:hover[b-5uni2f3hkn] {
+        background-color: black;
+        color: gold;
+    }
+
+.validation-summary[b-5uni2f3hkn] {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.register-links[b-5uni2f3hkn] {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+    .register-links a[b-5uni2f3hkn] {
+        text-decoration: none;
+        color: #007bff;
+        font-size: 12px;
+    }
+
+        .register-links a:hover[b-5uni2f3hkn] {
+            text-decoration: underline;
+        }
 /* _content/VersionOneWA/Components/Pages/Tasks.razor.rz.scp.css */
 
 .tasks-container[b-wvkfcn8eqq] {

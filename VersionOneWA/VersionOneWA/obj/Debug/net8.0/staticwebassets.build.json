@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "y0DcW67bqFLFT69YjqLpFp2iuWLTfEF6iei7/HIbovE=",
+  "Hash": "8Fzo2Fpv6YSawe0G7xMrlCRZrypOuiZ6ThkWEF8Q9VI=",
   "Source": "VersionOneWA",
   "BasePath": "_content/VersionOneWA",
   "Mode": "Default",
@@ -9517,6 +9517,44 @@
       "OriginalItemSpec": "wwwroot\\hcomb.png"
     },
     {
+      "Identity": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\home.png",
+      "SourceId": "VersionOneWA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\",
+      "BasePath": "_content/VersionOneWA",
+      "RelativePath": "home.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\home.png"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\home1.png",
+      "SourceId": "VersionOneWA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\",
+      "BasePath": "_content/VersionOneWA",
+      "RelativePath": "home1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\home1.png"
+    },
+    {
       "Identity": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\keeperLogin.png",
       "SourceId": "VersionOneWA",
       "SourceType": "Discovered",
@@ -9610,6 +9648,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\user.png"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\weather.png",
+      "SourceId": "VersionOneWA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\",
+      "BasePath": "_content/VersionOneWA",
+      "RelativePath": "weather.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\weather.png"
     }
   ]
 }

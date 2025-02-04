@@ -1,15 +1,16 @@
-html[b-4ao00b4nyn], body[b-4ao00b4nyn] {
+﻿
+html, body {
     height: 100vh;
     margin: 0;
-    overflow: hidden; 
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f8f9fa;
 }
 
-.login-container[b-4ao00b4nyn] {
-    width: 320px;
+.register-container {
+    width: 350px;
     padding: 20px;
     text-align: center;
     background: white;
@@ -19,24 +20,19 @@ html[b-4ao00b4nyn], body[b-4ao00b4nyn] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
-    .login-container img[b-4ao00b4nyn] {
-        max-width: 100px;
-        height: auto;
+    .register-container h1 {
+        font-size: 1.5rem;
         margin-bottom: 10px;
     }
 
-.form-floating[b-4ao00b4nyn] {
+.form-floating {
     margin-bottom: 10px;
     width: 100%;
 }
 
-input[b-4ao00b4nyn] {
+input {
     width: 100%;
     padding: 8px;
     border-radius: 6px;
@@ -44,7 +40,7 @@ input[b-4ao00b4nyn] {
     font-size: 14px;
 }
 
-button[b-4ao00b4nyn] {
+button {
     width: 100%;
     padding: 8px;
     background-color: gold;
@@ -56,33 +52,30 @@ button[b-4ao00b4nyn] {
     transition: all 0.3s ease;
 }
 
-    button:hover[b-4ao00b4nyn] {
+    button:hover {
         background-color: black;
         color: gold;
     }
 
-.login-links[b-4ao00b4nyn] {
+.validation-summary {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.register-links {
     margin-top: 15px;
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-    .login-links a[b-4ao00b4nyn] {
+    .register-links a {
         text-decoration: none;
         color: #007bff;
         font-size: 12px;
     }
 
-        .login-links a:hover[b-4ao00b4nyn] {
+        .register-links a:hover {
             text-decoration: underline;
         }
-
-h1[b-4ao00b4nyn] {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.checkbox label[b-4ao00b4nyn] {
-    font-size: 12px;
-}

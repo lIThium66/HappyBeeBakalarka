@@ -45,6 +45,14 @@
       "PackagePath": "staticwebassets\\hcomb.png"
     },
     {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\home.png",
+      "PackagePath": "staticwebassets\\home.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\home1.png",
+      "PackagePath": "staticwebassets\\home1.png"
+    },
+    {
       "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\keeperLogin.png",
       "PackagePath": "staticwebassets\\keeperLogin.png"
     },
@@ -59,6 +67,10 @@
     {
       "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\user.png",
       "PackagePath": "staticwebassets\\user.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\weather.png",
+      "PackagePath": "staticwebassets\\weather.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.VersionOneWA.Microsoft.AspNetCore.StaticWebAssets.props",

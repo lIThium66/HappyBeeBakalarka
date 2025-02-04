@@ -4,7 +4,7 @@
 @inject IBeehiveService BeehiveService
 
 
-<h2>Beehives</h2>
+<h2><strong> Beehives </strong></h2>
 
 <h4>Add your new beehive...</h4>
  <br>
@@ -27,7 +27,7 @@ else
         {
             <div class="hive-card">
                 <h2>@beehive.Name</h2>
-                <h5> Beehive Weight: @beehive.beehiveWeight <br> Number of bees: @beehive.numberOfBees</h5>
+                <h5> Beehive Weight: @beehive.beehiveWeight kg <br> Number of bees: @beehive.numberOfBees</h5>
                 <div class="hive-buttons">
                     <EditBeehiveButton Id="beehive.Id" />
                     <DeleteBeehiveButton Id="beehive.Id" OnBeehiveDeleted="HandleBeehiveDeleted" />
