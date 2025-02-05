@@ -11,7 +11,11 @@
 
 <h1> <strong>HAPPY BEE</strong> </h1>
 <hr>
-
+<AuthorizeView>
+    <NotAuthorized>
+        <h3><strong>You must log in to view the content.</strong></h3>
+    </NotAuthorized>
+    <Authorized>
 
     @if (jobs.Count == 0 || jobs == null)
 {
@@ -67,7 +71,8 @@
         }
     }
 </div>
-
+    </Authorized>
+</AuthorizeView>
 
 @code {
 
