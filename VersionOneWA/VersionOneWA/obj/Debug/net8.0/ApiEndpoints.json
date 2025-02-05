@@ -216,5 +216,15 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "VersionOneWA.Controllers.UserController",
+    "Method": "LogoutUser",
+    "RelativePath": "api/User/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

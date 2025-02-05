@@ -7,7 +7,7 @@ namespace VersionOneWA.Shared.Classes
 
         [Key]
         public int Id { get; set; }
-        //[Required(ErrorMessage = "Please give this task a Name!")]
+        [Required(ErrorMessage = "Please give this task a Name!")]
         public string Name { get; set; } = null!;
 
         public int Priority { get; set; } = 3;

@@ -61,18 +61,18 @@ else
         editContext = new EditContext(job);
     }
 
-    // protected override async Task OnParametersSetAsync()
-    // {
-    //     if (Id == null)
-    //     {
-    //         job = new Job { Name = string.Empty, Description = string.Empty, Priority = 3                                                                                                                                                                                                                                                                                 };
-    //          editContext = new EditContext(job);
-    //         return;
-    //     }
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Id == null)
+        {
+            job = new Job { Name = string.Empty, Description = string.Empty, Priority = 3                                                                                                                                                                                                                                                                                 };
+             editContext = new EditContext(job);
+            return;
+        }
 
-    //     job = await JobServices.GetJobById((int)Id); 
-    //     editContext = new EditContext(job);
-    // }
+        job = await JobServices.GetJobById((int)Id); 
+        editContext = new EditContext(job);
+    }
     
 
 

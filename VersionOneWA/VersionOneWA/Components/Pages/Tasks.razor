@@ -16,19 +16,21 @@
 <br>
 
 <CreateJobButton></CreateJobButton>
- <body>
-  
+<body>
 
-  
+
+
 </body>
 
-@if (jobs == null) 
+@if (jobs == null)
 {
-    <span>Loading...</span><br>
+    <span>Loading...</span>
+    <br>
 }
 else if (jobs.Count == 0)
 {
-    <span>No tasks found.</span><br>
+    <span>No tasks found.</span>
+    <br>
 }
 else
 {
@@ -36,14 +38,16 @@ else
         @foreach (var job in jobs)
         {
             <div class="task-card" style="@GetBorderStyle(job.Priority)">
-            <h2>@job.Name </h2>
-            <h5>@job.Description</h5>
+                <h2>@job.Name </h2>
+                <h5>@job.Description</h5>
                 <div class="task-buttons">
-                     <EditJobButton Id="job.Id"/>
-                     <DeleteJobButton Id="job.Id" OnJobDeleted="HandleJobDeleted" />
-                    </div>
+                    <EditJobButton Id="job.Id" />
+                    <DeleteJobButton Id="job.Id" OnJobDeleted="HandleJobDeleted" />
+                </div>
             </div>
         }
+
+    </div>
 }
 
 @code {
@@ -57,8 +61,8 @@ else
 
     private async Task HandleJobDeleted(int id)
     {
-        jobs = jobs?.Where(job => job.Id != id).ToList(); 
-        StateHasChanged(); 
+        jobs = jobs?.Where(job => job.Id != id).ToList();
+        StateHasChanged();
     }
 
     private string GetBorderStyle(int priority)

@@ -7,7 +7,9 @@
 @code {
     private async Task LogoutUser()
     {
+        Console.WriteLine("STLACENE LOGOUT");
         await Http.PostAsync("api/user/logout", null);
+
         NavigationManager.NavigateTo("/login", forceLoad: true);
     }
 }
