@@ -1,7 +1,11 @@
 ﻿@page "/beehives"
+@using Microsoft.AspNetCore.Authorization
 @rendermode InteractiveServer
 @attribute [StreamRendering]
+@* @attribute [Authorize] *@
+
 @inject IBeehiveService BeehiveService
+
 
 
 <h2><strong> Beehives </strong></h2>
@@ -37,7 +41,6 @@ else
 
     </div>
 }
-
 
 @code {
 

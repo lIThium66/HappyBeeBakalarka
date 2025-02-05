@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Security.Claims;
 using VersionOneWA.Client;
 using VersionOneWA.Data;
+using VersionOneWA.Shared.Classes;
 
 namespace VersionOneWA.Components.Account
 {

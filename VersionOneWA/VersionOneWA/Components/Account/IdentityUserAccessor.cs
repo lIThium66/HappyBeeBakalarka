@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using VersionOneWA.Data;
+using VersionOneWA.Shared.Classes;
 
 namespace VersionOneWA.Components.Account
 {

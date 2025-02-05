@@ -4,9 +4,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using VersionOneWA.Components.Account;
 using VersionOneWA.Data;
+using VersionOneWA.Shared.Classes;
 
 
-    internal sealed class UserAccesor(
+internal sealed class UserAccesor(
         IHttpContextAccessor httpContextAccessor,
         UserManager<ApplicationUser> userManager,
         IdentityRedirectManager redirectManager)

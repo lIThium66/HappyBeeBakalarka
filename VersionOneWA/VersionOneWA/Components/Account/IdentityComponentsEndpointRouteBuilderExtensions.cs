@@ -9,6 +9,7 @@ using System.Text.Json;
 using VersionOneWA.Components.Account.Pages;
 using VersionOneWA.Components.Account.Pages.Manage;
 using VersionOneWA.Data;
+using VersionOneWA.Shared.Classes;
 
 namespace Microsoft.AspNetCore.Routing
 {
