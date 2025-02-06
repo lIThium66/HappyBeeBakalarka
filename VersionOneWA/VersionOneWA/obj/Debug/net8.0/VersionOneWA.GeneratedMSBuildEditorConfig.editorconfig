@@ -174,12 +174,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbmRleC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Pages/InfoStatistics.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbmZvU3RhdGlzdGljcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Pages/Logout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Pages/ManageUser.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYW5hZ2VVc2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Pages/StatusSite.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTdGF0dXNTaXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Pages/Weather.razor]
@@ -194,6 +202,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcQ3JlYXRlQmVlaGl2ZUJ1dHRvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Shared/CreateInfoButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcQ3JlYXRlSW5mb0J1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Shared/CreateJobButton.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcQ3JlYXRlSm9iQnV0dG9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -202,12 +214,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcRGVsZXRlQmVlaGl2ZUJ1dHRvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Shared/DeleteInfoButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcRGVsZXRlSW5mb0J1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Shared/DeleteJobButton.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcRGVsZXRlSm9iQnV0dG9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Shared/EditBeehiveButton.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcRWRpdEJlZWhpdmVCdXR0b24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Shared/EditInfoButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcRWRpdEluZm9CdXR0b24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/Desktop/Škola/Bakalarka/v1/Happy Bee/VersionOneWA/VersionOneWA/Components/Shared/EditJobButton.razor]

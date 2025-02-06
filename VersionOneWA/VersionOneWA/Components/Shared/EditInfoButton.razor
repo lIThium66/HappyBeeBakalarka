@@ -1,0 +1,17 @@
+﻿@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<button class="btn btn-danger" type="button" @onclick="EditInfo"><strong>Update Info</strong></button>
+
+
+
+@code {
+
+    [Parameter]
+    public int Id { get; set; }
+    private void EditInfo()
+    {
+        NavigationManager.NavigateTo($"/edit-status/{Id}");
+    }
+
+}

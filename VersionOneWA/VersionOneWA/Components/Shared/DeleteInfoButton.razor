@@ -1,0 +1,27 @@
+﻿@inject IStatusServices StatusService
+
+<button class="btn btn-dark" type="button" @onclick="OnDelete">
+    <strong>Delete</strong>
+</button>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnStatusDelete { get; set; }
+
+
+
+    private async Task OnDelete()
+    {
+
+        await StatusService.DeleteStatus((int)Id);
+
+
+        if (OnStatusDelete.HasDelegate)
+        {
+            await OnStatusDelete.InvokeAsync(Id);
+        }
+    }
+}

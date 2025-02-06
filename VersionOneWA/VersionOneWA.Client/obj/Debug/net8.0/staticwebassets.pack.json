@@ -1,23 +1,23 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA.Client\\obj\\Debug\\net8.0\\compressed\\eqhj909h5i.gz",
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA.Client\\obj\\Debug\\net8.0\\compressed\\eqhj909h5i.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA.Client\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\VersionOneWA.Client.bundle.scp.css",
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA.Client\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\VersionOneWA.Client.bundle.scp.css",
       "PackagePath": "staticwebassets\\VersionOneWA.Client.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA.Client\\wwwroot\\appsettings.Development.json",
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA.Client\\wwwroot\\appsettings.Development.json",
       "PackagePath": "staticwebassets\\appsettings.Development.json"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA.Client\\wwwroot\\appsettings.json",
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA.Client\\wwwroot\\appsettings.json",
       "PackagePath": "staticwebassets\\appsettings.json"
     },
     {

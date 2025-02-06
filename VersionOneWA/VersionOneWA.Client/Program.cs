@@ -17,5 +17,6 @@ builder.Services.AddScoped(http => new HttpClient
 
 builder.Services.AddScoped<IJobServices, ClientJobService>();
 builder.Services.AddScoped<IBeehiveService, ClientBeehiveService>();
+builder.Services.AddScoped<IStatusServices, ClientStatusService>();
 
 await builder.Build().RunAsync();

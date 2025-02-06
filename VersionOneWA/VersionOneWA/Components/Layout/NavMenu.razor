@@ -1,4 +1,4 @@
-﻿
+﻿@attribute [AllowAnonymous]
 
 
 
@@ -37,6 +37,13 @@
         </div>
 
         <div class="nav-item px-3">
+            <NavLink class="nav-link" href="edit-status/1">
+                <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
+                <img src="info1.png" alt="Info" style="width: 28px; height: 28px; margin: 10px;" /> Info
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
             <NavLink class="nav-link" href="weather">
                @*  <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather *@
                 <img src="weather.png" alt="Weather" style="width: 28px; height:28px; margin: 10px;" /> Weather
@@ -56,6 +63,10 @@
                 <img src="beehiveBL.png" alt="Beehives" style="width: 28px; height: 28px; margin: 10px;" /> Beehives
             </NavLink>
         </div>
+
+        
+
+
              </Authorized>
         </AuthorizeView>
         

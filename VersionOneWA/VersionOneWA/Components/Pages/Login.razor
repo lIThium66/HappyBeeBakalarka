@@ -11,7 +11,7 @@
 @inject ILogger<Login> Logger
 @inject NavigationManager NavigationManager
 @inject IdentityRedirectManager RedirectManager
-
+@attribute [Authorize]
 @attribute [AllowAnonymous]
 
 <PageTitle>Log in</PageTitle>

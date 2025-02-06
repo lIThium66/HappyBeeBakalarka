@@ -11,3 +11,16 @@ C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA.Shared\obj\Deb
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA.Shared\obj\Debug\net8.0\refint\VersionOneWA.Shared.dll
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA.Shared\obj\Debug\net8.0\VersionOneWA.Shared.pdb
 C:\Users\admin\Desktop\Škola\Bakalarka\v1\Happy Bee\VersionOneWA.Shared\obj\Debug\net8.0\ref\VersionOneWA.Shared.dll
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\bin\Debug\net8.0\VersionOneWA.Shared.deps.json
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\bin\Debug\net8.0\VersionOneWA.Shared.dll
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\bin\Debug\net8.0\VersionOneWA.Shared.pdb
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\obj\Debug\net8.0\VersionOneWA.Shared.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\obj\Debug\net8.0\VersionOneWA.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\obj\Debug\net8.0\VersionOneWA.Shared.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\obj\Debug\net8.0\VersionOneWA.Shared.AssemblyInfo.cs
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\obj\Debug\net8.0\VersionOneWA.Shared.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\obj\Debug\net8.0\VersionOneWA.Shared.sourcelink.json
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\obj\Debug\net8.0\VersionOneWA.Shared.dll
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\obj\Debug\net8.0\refint\VersionOneWA.Shared.dll
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\obj\Debug\net8.0\VersionOneWA.Shared.pdb
+C:\Users\admin\Desktop\Škola\zaaaalooha\VersionOneWA.Shared\obj\Debug\net8.0\ref\VersionOneWA.Shared.dll

@@ -78,6 +78,22 @@ namespace VersionOneWA.Shared.Migrations
                     b.ToTable("Jobs");
                 });
 
+            modelBuilder.Entity("VersionOneWA.Shared.Classes.Status", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Status");
+                });
+
             modelBuilder.Entity("VersionOneWA.Shared.Classes.User", b =>
                 {
                     b.Property<int>("Id")

@@ -1,0 +1,50 @@
+﻿@page "/info"
+@inject IStatusServices StatusService
+@rendermode InteractiveAuto
+@inject NavigationManager NavigationManager
+
+<h3>Status</h3>
+<h5>Manage your statuses efficiently.</h5>
+
+<CreateInfoButton></CreateInfoButton>
+
+@if (statuses == null)
+{
+    <span>Loading...</span>
+    <br>
+}
+else if (statuses.Count == 0)
+{
+    <span>No statuses found.</span>
+    <br>
+}
+else
+{
+    <div class="tasks-container">
+        @foreach (var status in statuses)
+        {
+            <div class="task-card">
+                <h2>@status.Name</h2>
+                <div class="task-buttons">
+                    <EditInfoButton Id="status.Id" />
+                    <DeleteInfoButton Id="status.Id" />
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    List<Status>? statuses = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        statuses = await StatusService.GetStatuses();
+    }
+
+    private async Task HandleInfoDeleted(int id)
+    {
+        statuses = statuses?.Where(status => status.Id != id).ToList();
+        StateHasChanged();
+    }
+}

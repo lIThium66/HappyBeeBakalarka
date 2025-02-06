@@ -9,7 +9,7 @@ namespace VersionOneWA.Shared.Data
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<Job> Jobs { get; set; } = null!;
         public DbSet<Beehive> Beehives { get; set; } = null!;
-
+        public DbSet<Status> Status { get; set; } = null!;
         public HappyBeeContext(DbContextOptions<HappyBeeContext> options) : base(options) 
         { 
         
