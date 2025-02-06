@@ -49,7 +49,7 @@ namespace VersionOneWA.Shared.Services
                 await _happyBeeContext.SaveChangesAsync();
                 return editedBeehive;
             }
-            throw new Exception("Task not found.");
+            throw new Exception("Beehive not found.");
         }
 
         public async Task<List<Beehive>> GetAllBeehives()

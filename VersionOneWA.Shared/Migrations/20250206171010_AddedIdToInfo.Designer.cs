@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VersionOneWA.Shared.Data;
 
@@ -11,9 +12,11 @@ using VersionOneWA.Shared.Data;
 namespace VersionOneWA.Shared.Migrations
 {
     [DbContext(typeof(HappyBeeContext))]
-    partial class HappyBeeContextModelSnapshot : ModelSnapshot
+    [Migration("20250206171010_AddedIdToInfo")]
+    partial class AddedIdToInfo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,6 +51,37 @@ namespace VersionOneWA.Shared.Migrations
                     b.ToTable("Beehives");
                 });
 
+            modelBuilder.Entity("VersionOneWA.Shared.Classes.Info", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Sugar")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SugarDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Treatment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TreatmentDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Water")
+                        .HasColumnType("int");
+
+                    b.Property<string>("WaterDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Info");
+                });
+
             modelBuilder.Entity("VersionOneWA.Shared.Classes.Job", b =>
                 {
                     b.Property<int>("Id")
@@ -76,40 +110,6 @@ namespace VersionOneWA.Shared.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Jobs");
-                });
-
-            modelBuilder.Entity("VersionOneWA.Shared.Classes.Status", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Sugar")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SugarDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Treatment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TreatmentDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Water")
-                        .HasColumnType("int");
-
-                    b.Property<string>("WaterDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Status");
                 });
 
             modelBuilder.Entity("VersionOneWA.Shared.Classes.User", b =>

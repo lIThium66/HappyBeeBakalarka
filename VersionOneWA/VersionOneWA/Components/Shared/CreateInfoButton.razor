@@ -1,0 +1,11 @@
+﻿@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<button class="btn btn-warning" type="button" @onclick="CreateInfo"><strong>Create Info</strong></button>
+
+@code {
+    private void CreateInfo()
+    {
+        NavigationManager.NavigateTo("/edit-info");
+    }
+}

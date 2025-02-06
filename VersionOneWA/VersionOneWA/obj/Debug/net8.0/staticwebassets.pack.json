@@ -53,6 +53,14 @@
       "PackagePath": "staticwebassets\\home1.png"
     },
     {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\info.png",
+      "PackagePath": "staticwebassets\\info.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\info1.png",
+      "PackagePath": "staticwebassets\\info1.png"
+    },
+    {
       "Id": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA\\VersionOneWA\\wwwroot\\keeperLogin.png",
       "PackagePath": "staticwebassets\\keeperLogin.png"
     },
