@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VersionOneWA.Data;
 using VersionOneWA.Shared.Classes;
-using VersionOneWA.Shared.Data;
 
 namespace VersionOneWA.Shared.Services
 {
     public class BeehiveService : IBeehiveService
     {
-        private readonly HappyBeeContext _happyBeeContext;
+        private readonly ApplicationDbContext _happyBeeContext;
 
-        public BeehiveService(HappyBeeContext happyBeeContext)
+        public BeehiveService(ApplicationDbContext happyBeeContext)
         {
             _happyBeeContext = happyBeeContext;
         }

@@ -1,0 +1,131 @@
+﻿@page "/bee-friends"
+@inject IFriendService FriendService
+@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
+@using VersionOneWA.Components.Pages;
+@using VersionOneWA.Shared.Classes;
+@inject UserManager<ApplicationUser> UserManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<h1>Bee friends 🐝</h1>
+
+<div class="search-bar mb-4">
+    <div class="input-group">
+        <input type="text"
+               class="form-control"
+               placeholder="Search by name, surname or email..."
+               @bind="searchQuery"
+               @oninput="async () => await Search()" />
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" @onclick="async () => await Search()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+@if (filteredUsers == null)
+{
+    <p>Loading users...</p>
+}
+else if (!filteredUsers.Any())
+{
+    <p>No users found matching your search criteria.</p>
+}
+else
+{
+    <div class="user-list">
+        @foreach (var user in filteredUsers)
+        {
+            <div class="user-item card mb-3">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="card-title mb-1">@user.Name @user.Surname</h5>
+                        <p class="card-text text-muted mb-0">@user.Email</p>
+                    </div>
+                    <div>
+                        @if (pendingStatus.ContainsKey(user.Id) && pendingStatus[user.Id])
+                        {
+                            <button class="btn btn-secondary" disabled>
+                                <i class="fas fa-clock"></i> Pending
+                            </button>
+                        }
+                        else if (friendStatus.ContainsKey(user.Id) && friendStatus[user.Id])
+                        {
+                            <button class="btn btn-success" disabled>
+                                <i class="fas fa-user-check"></i> Friends
+                            </button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-primary" @onclick="@(() => SendRequest(user))">
+                                <i class="fas fa-user-plus"></i> Add Friend
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private List<ApplicationUser> allUsers = new();
+    private List<ApplicationUser> filteredUsers = new();
+    private ApplicationUser? currentUser;
+    private Dictionary<string, bool> pendingStatus = new();
+    private Dictionary<string, bool> friendStatus = new(); 
+    private string searchQuery = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        currentUser = await UserManager.GetUserAsync(authState.User);
+
+        var adminUsers = await UserManager.GetUsersInRoleAsync("Admin");
+        var adminUserIds = adminUsers.Select(u => u.Id).ToHashSet();
+
+        allUsers = await UserManager.Users
+            .Where(u => u.Id != currentUser.Id && !adminUserIds.Contains(u.Id))
+            .ToListAsync();
+
+        foreach (var user in allUsers)
+        {
+            var hasPending = await FriendService.HasPendingRequest(currentUser.Id, user.Id);
+            pendingStatus[user.Id] = hasPending;
+
+            var areFriends = await FriendService.AreFriends(currentUser.Id, user.Id); 
+            friendStatus[user.Id] = areFriends;
+        }
+
+        await Search();
+    }
+
+    private async Task Search()
+    {
+        if (string.IsNullOrWhiteSpace(searchQuery))
+        {
+            filteredUsers = allUsers.ToList();
+        }
+        else
+        {
+            var query = searchQuery.Trim().ToLower();
+            filteredUsers = allUsers
+                .Where(u => (u.Name?.ToLower().Contains(query) == true) ||
+                            (u.Surname?.ToLower().Contains(query) == true) ||
+                            (u.Email?.ToLower().Contains(query) == true))
+                .ToList();
+        }
+        StateHasChanged();
+    }
+
+    private async Task SendRequest(ApplicationUser receiver)
+    {
+        if (currentUser?.Id == null) return;
+
+        await FriendService.SendFriendRequestAsync(currentUser.Id, receiver.Id);
+        pendingStatus[receiver.Id] = true;
+        StateHasChanged();
+    }
+}

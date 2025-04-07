@@ -35,15 +35,21 @@ namespace VersionOneWA.Shared.Services
             return await result.Content.ReadFromJsonAsync<Job>();
         }
 
-        public Task<List<Job>> GetAllJobs()
+        public async Task<List<Job>> GetAllJobs()
         {
-            throw new NotImplementedException();
+            var jobs = await _httpClient.GetFromJsonAsync<List<Job>>("/api/job");
+            return jobs;
         }
 
         public async Task<Job> GetJobById(int id)
         {
             var result = await _httpClient.GetFromJsonAsync<Job>($"/api/job/{id}");
             return result;
+        }
+
+        public async Task<List<Job>> GetUserJobs(string userId)
+        {
+            return await _httpClient.GetFromJsonAsync<List<Job>>($"/api/job/user/{userId}");
         }
     }
 }

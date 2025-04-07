@@ -1,5 +1,8 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
 @inject IJobServices JobService
+@inject AuthenticationStateProvider AuthenticationStateProvider
 @attribute [StreamRendering]
 @attribute [AllowAnonymous]
 
@@ -11,6 +14,7 @@
 
 
 <h1> <strong>HAPPY BEE</strong> </h1>
+<h2>Welcome, @userName</h2>
 <hr>
 <AuthorizeView>
     <NotAuthorized>
@@ -78,11 +82,30 @@
 @code {
 
     List<Job>? jobs = new List<Job>();
+    private string userName = "Unknown";
 
     protected override async Task OnInitializedAsync()
     {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity != null && user.Identity.IsAuthenticated)
+        {
+            var appUser = await UserManager.GetUserAsync(user);
+            if (!string.IsNullOrEmpty(user.Identity.Name))
+            {
+
+                userName = appUser.Name;
+            }
+            else
+            {
+                userName = "Unknown";
+            }
+        }
+
         jobs = await JobService.GetAllJobs();
     }
+
 
     bool atLeastOneUrgent()
     {

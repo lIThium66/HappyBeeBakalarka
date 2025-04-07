@@ -3,13 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VersionOneWA.Shared.Data;
+using VersionOneWA.Data;
+using VersionOneWA.Shared.Classes;
 
 #nullable disable
 
 namespace VersionOneWA.Migrations
 {
-    [DbContext(typeof(HappyBeeContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     partial class HappyBeeContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

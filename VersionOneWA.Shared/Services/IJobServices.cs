@@ -9,5 +9,7 @@ namespace VersionOneWA.Shared.Services
         Task<Job> AddJob(Job job);
         Task<Job> EditJob(int id, Job job);
         Task<bool> DeleteJob(int id);
+
+        Task<List<Job>> GetUserJobs(string userId);
     }
 }

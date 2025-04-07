@@ -1,4 +1,6 @@
-﻿@inject NavigationManager NavigationManager
+﻿@using Microsoft.AspNetCore.Identity
+@inject NavigationManager NavigationManager
+@inject SignInManager<ApplicationUser> SignInManager
 @inject HttpClient Http
 
 
@@ -8,7 +10,8 @@
     private async Task LogoutUser()
     {
         Console.WriteLine("STLACENE LOGOUT");
-        await Http.PostAsync("api/user/logout", null);
+        //await Http.PostAsync("api/user/logout", null);
+        await SignInManager.SignOutAsync();
 
         NavigationManager.NavigateTo("/login", forceLoad: true);
     }

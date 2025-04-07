@@ -16,6 +16,68 @@ main[b-tc53vxo59z] {
     /* opacity: 75%; */
 }
 
+.top-row[b-tc53vxo59z] {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Medzera medzi vyh�ad�vac�m panelom a login/logout sekciou */
+    padding: 10px;
+}
+
+/* �t�ly pre vyh�ad�vac� panel */
+.search-bar[b-tc53vxo59z] {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Medzera medzi inputom a tla�idlom */
+}
+
+    .search-bar input[b-tc53vxo59z] {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: transparent; /* Transparentn� pozadie */
+        outline: none; /* Odstr�nenie �tandardn�ho ohrani�enia pri focus */
+    }
+
+        .search-bar input:focus[b-tc53vxo59z] {
+            border-color: #ffd700; /* Zlat� ohrani�enie pri focus */
+        }
+
+/* �t�ly pre zlat� tla�idlo */
+.btn-gold[b-tc53vxo59z] {
+    padding: 5px 10px;
+    background-color: #ffd700; /* Zlat� pozadie */
+    border: 1px solid #ffd700; /* Zlat� ohrani�enie */
+    border-radius: 4px;
+    color: #000; /* �ierna farba textu */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Anim�cia pri hover */
+}
+
+    .btn-gold:hover[b-tc53vxo59z] {
+        background-color: #ccac00; /* Tmav�ia zlat� pri hover */
+        border-color: #ccac00; /* Tmav�ia zlat� ohrani�enie pri hover */
+        color: #000; /* �ierna farba textu pri hover */
+    }
+
+/* �t�ly pre login link */
+.login-link[b-tc53vxo59z] {
+    text-decoration: none;
+    color: #007bff; /* Modr� farba pre login link */
+    padding: 5px 10px;
+    border: 1px solid #007bff; /* Modr� ohrani�enie */
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s; /* Anim�cia pri hover */
+}
+
+    .login-link:hover[b-tc53vxo59z] {
+        background-color: #007bff; /* Modr� pozadie pri hover */
+        color: white; /* Biely text pri hover */
+    }
+
+
+
+
+    
 .sidebar[b-tc53vxo59z] {
     background-image: linear-gradient(180deg, rgb(255, 223, 0) 0%, gold 90%);
     /*background-color: goldenrod;*/
@@ -752,3 +814,63 @@ button[b-5uni2f3hkn] {
         width: calc(100% - 16px); 
     }
 }
+/* _content/VersionOneWA/Components/Pages/Weather.razor.rz.scp.css */
+.weather-forecast-container[b-t1hq94f9vc] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.weather-box[b-t1hq94f9vc] {
+    background-color: gold;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    color: #222;
+    font-family: Arial, sans-serif;
+    transition: transform 0.2s ease-in-out;
+}
+
+    .weather-box:hover[b-t1hq94f9vc] {
+        transform: scale(1.05);
+    }
+
+    .weather-box img[b-t1hq94f9vc] {
+        max-width: 80px;
+        height: auto;
+        margin-top: 10px;
+    }
+.search-box[b-t1hq94f9vc] {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+    .search-box input[b-t1hq94f9vc] {
+        width: 250px;
+        padding: 10px;
+        border-radius: 20px;
+        border: 2px solid gold;
+        outline: none;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .search-box button[b-t1hq94f9vc] {
+        background-color: gold;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 10px;
+        transition: 0.3s;
+    }
+
+        .search-box button:hover[b-t1hq94f9vc] {
+            background-color: darkgoldenrod;
+        }

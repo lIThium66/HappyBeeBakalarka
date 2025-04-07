@@ -40,5 +40,22 @@ namespace VersionOneWA.Controllers
             var deletedJob = await _jobServices.DeleteJob(id);
             return Ok(deletedJob);
         }
+
+        [HttpGet]
+        public async Task<ActionResult<List<Job>>> GetAllJobs()
+        {
+            var jobs = await _jobServices.GetAllJobs();
+            return Ok(jobs);
+        }
+
+        [HttpGet("user/{userId}")]
+        public async Task<ActionResult<List<Job>>> GetUserJobs(string userId)
+        {
+            var jobs = await _jobServices.GetUserJobs(userId);
+            return Ok(jobs);
+        }
+
+
+
     }
 }

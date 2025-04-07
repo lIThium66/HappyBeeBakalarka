@@ -1,9 +1,11 @@
 ﻿@page "/tasks"
 @using Microsoft.AspNetCore.Authorization
 @rendermode InteractiveServer
-@* @inject NavigationManager NavigationManager *@
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
 @attribute [StreamRendering]
 @inject IJobServices JobService
+@using System.Security.Claims
 
 
 <head>
@@ -51,12 +53,41 @@ else
 }
 
 @code {
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     jobs = await JobService.GetAllJobs();
+
+    // }
+
     List<Job>? jobs = null;
+    private string? currentUserId;
 
     protected override async Task OnInitializedAsync()
     {
-        jobs = await JobService.GetAllJobs();
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
 
+        if (user.Identity == null || !user.Identity.IsAuthenticated)
+        {
+            NavigationManager.NavigateTo("/login");
+
+            return;
+        }
+
+        var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier);
+        if (userIdClaim != null)
+        {
+            currentUserId = userIdClaim.Value;
+        }
+
+        if (!string.IsNullOrEmpty(currentUserId))
+        {
+            jobs = await JobService.GetUserJobs(currentUserId);
+        }
+        if (user.IsInRole("Admin"))
+        {
+            jobs = await JobService.GetAllJobs();
+        }
     }
 
     private async Task HandleJobDeleted(int id)

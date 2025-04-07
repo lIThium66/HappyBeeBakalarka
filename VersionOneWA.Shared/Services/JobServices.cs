@@ -1,17 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection.Metadata;
+using VersionOneWA.Data;
 using VersionOneWA.Shared.Classes;
-using VersionOneWA.Shared.Data;
 
 namespace VersionOneWA.Shared.Services
 {
     public class JobServices : IJobServices
     {
 
-        private readonly HappyBeeContext _happyBeeContext;
+        private readonly ApplicationDbContext _happyBeeContext;
 
-        public JobServices(HappyBeeContext happyBeeContext)
+        public JobServices(ApplicationDbContext happyBeeContext)
         {
             _happyBeeContext = happyBeeContext;
         }
@@ -68,6 +68,11 @@ namespace VersionOneWA.Shared.Services
         public async Task<Job> GetJobById(int id)
         {
             return await _happyBeeContext.Jobs.FindAsync(id);
+        }
+
+        public async Task<List<Job>> GetUserJobs(string userId)
+        {
+            return await _happyBeeContext.Jobs.Where(j => j.UserId == userId).ToListAsync();
         }
     }
 }

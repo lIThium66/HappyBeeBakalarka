@@ -1,72 +1,70 @@
 ﻿@page "/weather"
-@attribute [StreamRendering]
+@using static VersionOneWA.Shared.Services.WeatherService
+@inject WeatherService WeatherService
+@rendermode InteractiveServer
 
-<!DOCTYPE html>
-<html lang="en">
+<h3>Weather</h3>
+<hr>
+<div class="weather-container">
 
-<head>
-        <title>Weather</title>
-</head>
-<body>
-    <h1><strong>Weather</strong></h1>
+    <div class="search-box">
+        <input @bind="City" placeholder="Enter city" />
+        <button @onclick="SearchWeather"><strong>Search</strong>🔍</button>
+    </div>
 
-        <p>This component demonstrates showing data.</p>
-</body>
-</html>
-
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
- 
-}
-
-@code {
-    private WeatherForecast[]? forecasts;
-
-    protected override async Task OnInitializedAsync()
+    @if (!string.IsNullOrEmpty(ErrorMessage))
     {
-        // Simulate asynchronous loading to demonstrate streaming rendering
-        await Task.Delay(500);
-
-        var startDate = DateOnly.FromDateTime(DateTime.Now);
-        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
-        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        {
-            Date = startDate.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = summaries[Random.Shared.Next(summaries.Length)]
-        }).ToArray();
+        <p style="color: red;">@ErrorMessage</p>
     }
 
-    private class WeatherForecast
+    @if (Forecast != null)
     {
-        public DateOnly Date { get; set; }
-        public int TemperatureC { get; set; }
-        public string? Summary { get; set; }
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        <div class="weather-forecast-container">
+            @foreach (var weather in Forecast.DailyForecast)
+            {
+                <div class="weather-box">
+                    <strong>@DateTime.Parse(weather.Date).ToString("dd.MM.yyyy")</strong>
+                    <p>@weather.Temp°C</p>
+                    <strong>@weather.Description.ToUpper()</strong> <br>
+                    <img src="@($"https://openweathermap.org/img/wn/{weather.Icon}@2x.png")" alt="Weather icon" />
+                </div>
+            }
+        </div>
+    }
+</div>
+
+
+@code {
+    private string City { get; set; } = "";
+    private WeatherForecastResponse Forecast { get; set; }
+    private string ErrorMessage { get; set; } = "";
+
+    private async Task SearchWeather()
+    {
+        ErrorMessage = "";
+        Forecast = null;
+
+        if (string.IsNullOrWhiteSpace(City))
+        {
+            ErrorMessage = "Enter city";
+            return;
+        }
+
+        try
+        {
+            Forecast = await WeatherService.GetWeatherForecastAsync(City);
+            if (Forecast == null || Forecast.DailyForecast == null || !Forecast.DailyForecast.Any())
+            {
+                ErrorMessage = "Can't find any info.";
+            }
+        }
+        catch (HttpRequestException)
+        {
+            ErrorMessage = "City does not exists!";
+        }
+        catch (Exception)
+        {
+            ErrorMessage = "Error! Try later!";
+        }
     }
 }

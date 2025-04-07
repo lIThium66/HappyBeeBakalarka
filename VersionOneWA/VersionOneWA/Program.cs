@@ -6,7 +6,6 @@ using VersionOneWA.Client.Pages;
 using VersionOneWA.Components;
 using VersionOneWA.Components.Account;
 using VersionOneWA.Shared.Services;
-using VersionOneWA.Shared.Data;
 using VersionOneWA.Data;
 using VersionOneWA.Components.Shared;
 using VersionOneWA.Shared.Classes;
@@ -34,12 +33,17 @@ builder.Services.AddScoped(http => new HttpClient
 });
 
 
-builder.Services.AddDbContext<HappyBeeContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IJobServices, JobServices>();
 builder.Services.AddScoped<IBeehiveService, BeehiveService>();
 builder.Services.AddScoped<IStatusServices, StatusServices>();
+builder.Services.AddScoped<IFriendService, FriendService>();
+builder.Services.AddScoped<IFriendshipService, FriendshipService>();
+
+builder.Services.AddHttpClient<WeatherService>();
+
 
 
 builder.Services.AddAuthentication(options =>

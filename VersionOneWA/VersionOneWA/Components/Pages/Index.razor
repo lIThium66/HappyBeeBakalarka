@@ -21,8 +21,18 @@
             <DataAnnotationsValidator />
             <ValidationSummary class="text-danger" role="alert" />
             <div class="form-floating mb-3">
-                <input type="text" value="@username" class="form-control" placeholder="Please choose your username." disabled />
-                <label for="username" class="form-label">Username</label>
+                <input type="text" value="@email" class="form-control" placeholder="Please choose your email." disabled />
+                <label for="email" class="form-label">Email</label>
+            </div>
+            <ValidationSummary class="text-danger" role="alert" />
+            <div class="form-floating mb-3">
+                <input type="text" value="@Input.Name" class="form-control" placeholder="Please enter your name" disabled/>
+                <label for="name" class="form-label">Name</label>
+            </div>
+            <ValidationSummary class="text-danger" role="alert" />
+            <div class="form-floating mb-3">
+                <input type="text" value="@Input.Surname" class="form-control" placeholder="Please enter your surname" disabled/>
+                <label for="surname" class="form-label">Surname</label>
             </div>
             <div class="form-floating mb-3">
                 <InputText @bind-Value="Input.PhoneNumber" class="form-control" placeholder="Please enter your phone number." />
@@ -41,7 +51,7 @@
 
 @code {
     private ApplicationUser user = default!;
-    private string? username;
+    private string? email;
     private string? phoneNumber;
 
     [CascadingParameter]
@@ -55,17 +65,21 @@
         Input ??= new();
 
         user = await UserAccessor.GetRequiredUserAsync(HttpContext);
-        username = await UserManager.GetUserNameAsync(user);
+        email = await UserManager.GetUserNameAsync(user);
         phoneNumber = await UserManager.GetPhoneNumberAsync(user);
 
         Input.PhoneNumber ??= phoneNumber;
         Input.DateOfBirth ??= user.DateOfBirth;
+        Input.Name ??= user.Name;
+        Input.Surname ??= user.Surname;
     }
 
     private async Task OnValidSubmitAsync()
     {
         user.PhoneNumber = Input.PhoneNumber;
         user.DateOfBirth = Input.DateOfBirth;
+        user.Name = Input.Name;
+        user.Surname = Input.Surname;
 
         var updateResult = await UserManager.UpdateAsync(user);
         if (!updateResult.Succeeded)
@@ -84,6 +98,10 @@
         [Display(Name = "Phone number")]
         public string? PhoneNumber { get; set; }
         public DateOnly? DateOfBirth { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        
+        
 
     }
 }

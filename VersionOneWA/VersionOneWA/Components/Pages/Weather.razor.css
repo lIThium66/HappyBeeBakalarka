@@ -1,0 +1,59 @@
+﻿.weather-forecast-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.weather-box {
+    background-color: gold;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    color: #222;
+    font-family: Arial, sans-serif;
+    transition: transform 0.2s ease-in-out;
+}
+
+    .weather-box:hover {
+        transform: scale(1.05);
+    }
+
+    .weather-box img {
+        max-width: 80px;
+        height: auto;
+        margin-top: 10px;
+    }
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+    .search-box input {
+        width: 250px;
+        padding: 10px;
+        border-radius: 20px;
+        border: 2px solid gold;
+        outline: none;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .search-box button {
+        background-color: gold;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 10px;
+        transition: 0.3s;
+    }
+
+        .search-box button:hover {
+            background-color: darkgoldenrod;
+        }

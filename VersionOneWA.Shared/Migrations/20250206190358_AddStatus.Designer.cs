@@ -5,13 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VersionOneWA.Shared.Data;
+using VersionOneWA.Data;
+using VersionOneWA.Shared.Classes;
 
 #nullable disable
 
 namespace VersionOneWA.Shared.Migrations
 {
-    [DbContext(typeof(HappyBeeContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20250206190358_AddStatus")]
     partial class AddStatus
     {

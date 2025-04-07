@@ -1,4 +1,7 @@
-﻿@inherits LayoutComponentBase
+﻿@using Microsoft.AspNetCore.Identity
+@inherits LayoutComponentBase
+
+
 @attribute [AllowAnonymous]
 <div class="page">
     <div class="sidebar">
@@ -6,23 +9,24 @@
     </div>
     
 
-    <main>
-        <div class="top-row px-4">
-            <AuthorizeView>
-                <NotAuthorized>
-            <a href="/login">Login</a>
-                </NotAuthorized>
-                <Authorized>
-                     <LogoutButton></LogoutButton> 
-                 </Authorized>
-            </AuthorizeView> 
+  <main>
+    <div class="top-row px-4">
+        
+        <AuthorizeView>
+            <NotAuthorized>
+                <a href="/login" class="login-link">Login</a>
+                 </NotAuthorized>
+            <Authorized>
+                <LogoutButton></LogoutButton>
+            </Authorized>
+        </AuthorizeView>
+    </div>
+    <article class="content px-4">
+         @Body
+     </article>
+ </main>
 
-        </div>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
 </div>
 
 <div id="blazor-error-ui">
@@ -30,3 +34,13 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
+
+
+@code {
+    private string searchQuery;
+
+    private void Search()
+    {
+        
+    }
+}

@@ -5,16 +5,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VersionOneWA.Data;
 using VersionOneWA.Shared.Classes;
-using VersionOneWA.Shared.Data;
+
 
 namespace VersionOneWA.Shared.Services
 {
     public class StatusServices : IStatusServices
     {
-        private readonly HappyBeeContext _happyBeeContext;
+        private readonly ApplicationDbContext _happyBeeContext;
 
-        public StatusServices(HappyBeeContext beeContext)
+        public StatusServices(ApplicationDbContext beeContext)
         {
             _happyBeeContext = beeContext;
         }

@@ -10,8 +10,7 @@ namespace VersionOneWA.Shared.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Info");
+            migrationBuilder.Sql("IF OBJECT_ID(N'Info', N'U') IS NOT NULL DROP TABLE Info;");
 
             migrationBuilder.CreateTable(
                 name: "Status",
@@ -58,5 +57,4 @@ namespace VersionOneWA.Shared.Migrations
                     table.PrimaryKey("PK_Info", x => x.Id);
                 });
         }
-    }
-}
+    }}

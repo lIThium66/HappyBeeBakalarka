@@ -1,0 +1,103 @@
+﻿@page "/friend-requests"
+@inject IFriendshipService FriendshipService
+@inject HttpClient Http
+@rendermode InteractiveServer
+@inject UserManager<ApplicationUser> UserManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
+@using VersionOneWA.Shared.Classes;
+
+<h1>Friend Requests</h1>
+<h2>@(currentUser?.Name ?? "No Name")</h2>
+
+@if (friendRequests == null)
+{
+    <p>Loading friend requests...</p>
+}
+else if (!friendRequests.Any())
+{
+    <p>No pending friend requests.</p>
+}
+else
+{
+    <div class="friend-requests-list">
+        @foreach (var request in friendRequests)
+        {
+            <div class="friend-request-item card mb-3">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="card-title mb-1">@(request?.Name ?? "Unknown") @(request?.Surname ?? "")</h5>
+                        <p class="card-text text-muted mb-0">@request?.Email ?? "No email available"</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-success me-2" @onclick="@(() => AcceptRequest(request?.Id))">
+                            <i class="fas fa-check"></i> Accept
+                        </button>
+                        <button class="btn btn-danger" @onclick="@(() => RejectRequest(request?.Id))">
+                            <i class="fas fa-times"></i> Reject
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private List<ApplicationUser> friendRequests = new();
+    private ApplicationUser? currentUser;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        currentUser = await UserManager.GetUserAsync(authState.User);
+
+        await LoadFriendRequests();
+    }
+
+    private async Task LoadFriendRequests()
+    {
+        if (currentUser?.Id == null)
+        {
+            Console.WriteLine("current user niktosko");
+            return;
+        }
+
+        var pendingRequests = await FriendshipService.GetPendingRequestsAsync(currentUser.Id);
+
+        friendRequests = pendingRequests;
+
+        Console.WriteLine($"requests: {friendRequests.Count}");
+
+        StateHasChanged();
+    }
+
+    private async Task AcceptRequest(string senderId)
+    {
+        if (currentUser?.Id == null) return;
+
+        var success = await FriendshipService.ConfirmFriendRequestAsync(currentUser.Id, senderId);
+
+        if (success)
+        {
+            friendRequests.RemoveAll(r => r.Id == senderId);
+            StateHasChanged();
+        }
+        else
+        {
+            Console.WriteLine("NEJDEEE UUUH accept ");
+        }
+    }
+
+    private async Task RejectRequest(string senderId)
+    {
+        if (currentUser?.Id == null) return;
+
+        await FriendshipService.RemoveFriendRequestAsync(currentUser.Id, senderId);
+        friendRequests.RemoveAll(r => r.Id == senderId);
+        StateHasChanged();
+    }
+}
+
+

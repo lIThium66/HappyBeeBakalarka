@@ -15,6 +15,68 @@ main {
     /* opacity: 75%; */
 }
 
+.top-row {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Medzera medzi vyh¾adávacím panelom a login/logout sekciou */
+    padding: 10px;
+}
+
+/* Štýly pre vyh¾adávací panel */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Medzera medzi inputom a tlaèidlom */
+}
+
+    .search-bar input {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: transparent; /* Transparentné pozadie */
+        outline: none; /* Odstránenie štandardného ohranièenia pri focus */
+    }
+
+        .search-bar input:focus {
+            border-color: #ffd700; /* Zlaté ohranièenie pri focus */
+        }
+
+/* Štýly pre zlaté tlaèidlo */
+.btn-gold {
+    padding: 5px 10px;
+    background-color: #ffd700; /* Zlaté pozadie */
+    border: 1px solid #ffd700; /* Zlaté ohranièenie */
+    border-radius: 4px;
+    color: #000; /* Èierna farba textu */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Animácia pri hover */
+}
+
+    .btn-gold:hover {
+        background-color: #ccac00; /* Tmavšia zlatá pri hover */
+        border-color: #ccac00; /* Tmavšia zlatá ohranièenie pri hover */
+        color: #000; /* Èierna farba textu pri hover */
+    }
+
+/* Štýly pre login link */
+.login-link {
+    text-decoration: none;
+    color: #007bff; /* Modrá farba pre login link */
+    padding: 5px 10px;
+    border: 1px solid #007bff; /* Modré ohranièenie */
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s; /* Animácia pri hover */
+}
+
+    .login-link:hover {
+        background-color: #007bff; /* Modré pozadie pri hover */
+        color: white; /* Biely text pri hover */
+    }
+
+
+
+
+    
 .sidebar {
     background-image: linear-gradient(180deg, rgb(255, 223, 0) 0%, gold 90%);
     /*background-color: goldenrod;*/

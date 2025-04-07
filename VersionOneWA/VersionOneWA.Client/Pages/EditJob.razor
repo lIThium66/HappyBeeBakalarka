@@ -1,8 +1,10 @@
 ﻿@page "/edit-tasks"
 @page "/edit-tasks/{id:int}"
+@using System.Security.Claims
 @inject IJobServices JobServices
-@rendermode InteractiveAuto
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@rendermode InteractiveAuto
 
 
 @if (Id == null)
@@ -20,14 +22,14 @@ else
 <div class="form-container">
     <EditForm EditContext="editContext" OnValidSubmit="HandleSubmit" OnInvalidSubmit="HandleInvalidSubmit" FormName="EditTask">
         <DataAnnotationsValidator />
+
         <div class="form-group">
             <label>Name</label>
             <InputText @bind-Value="job.Name" />
-            @* <ValidationMessage For="@(() => job.Name)" class="validation-message" /> *@
+
             <br>
             <label>Description</label>
             <textarea class="desc-text" @bind="job.Description"></textarea>
-            @*<ValidationMessage For="@(() => job.Description)" class="validation-message" />*@
 
             <label>Priority</label>
             <select class="form-control" @bind="job.Priority">
@@ -38,8 +40,8 @@ else
 
             <label>Date and Time</label>
             <InputDate @bind-Value="job.JobDate" />
-
         </div>
+
         <br>
         <button type="submit" class="btn btn-primary" disabled="@isSubmitting">Submit</button>
 
@@ -47,17 +49,38 @@ else
     </EditForm>
 </div>
 
-
 @code {
 
-    [Parameter]
-    public int? Id { get; set; }
-    Job job { get; set; } = new Job { Name = string.Empty, Description = string.Empty, Priority = 3};
-    EditContext editContext = null!;
-    private bool isSubmitting = false;
+    [Parameter] public int? Id { get; set; }
+    private EditContext editContext;
+    private bool isSubmitting;
+    private string? currentUserId;
+    private Job job = new Job { Name = string.Empty, Description = string.Empty, Priority = 3 };
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity == null || !user.Identity.IsAuthenticated)
+        {
+            NavigationManager.NavigateTo("/login");
+            return;
+        }
+
+        var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier);
+        if (userIdClaim != null)
+        {
+            currentUserId = userIdClaim.Value;
+        }
+
+        Console.WriteLine("Current User ID: " + currentUserId);
+
+        if (string.IsNullOrEmpty(currentUserId))
+        {
+            throw new Exception("User ID is null! Make sure authentication is properly configured.");
+        }
+
         editContext = new EditContext(job);
     }
 
@@ -65,25 +88,34 @@ else
     {
         if (Id == null)
         {
-            job = new Job { Name = string.Empty, Description = string.Empty, Priority = 3                                                                                                                                                                                                                                                                                 };
-             editContext = new EditContext(job);
+            job = new Job();
+            job.Name = string.Empty;
+            job.Description = string.Empty;
+            job.Priority = 3;
+        }
+        else
+        {
+            var existingJob = await JobServices.GetJobById((int)Id);
+            if (existingJob != null)
+            {
+                job = existingJob;
+            }
+            else
+            {
+                job = new Job();
+            }
+        }
+
+        editContext = new EditContext(job);
+        StateHasChanged();
+    }
+
+    private async Task HandleSubmit()
+    {
+        if (isSubmitting)
+        {
             return;
         }
-
-        job = await JobServices.GetJobById((int)Id); 
-        editContext = new EditContext(job);
-    }
-    
-
-
-    async Task HandleSubmit()
-    {
-        if (job.Name == string.Empty)
-        {
-            return;    
-        }
-        if (isSubmitting)
-            return; 
 
         isSubmitting = true;
 
@@ -91,29 +123,34 @@ else
         {
             if (Id == null)
             {
+                if (string.IsNullOrEmpty(currentUserId))
+                {
+                    throw new Exception("UserID is null. Are you sure user is authenticated?");
+                }
+
+                job.UserId = currentUserId;
+                Console.WriteLine("Creating Job: " + job.Name + ", UserId: " + job.UserId);
                 await JobServices.AddJob(job);
-                NavigationManager.NavigateTo("/tasks");
             }
             else
             {
-                await JobServices.EditJob((int)Id, job);
-                NavigationManager.NavigateTo("/tasks");
-
+                Console.WriteLine("Editing Job: " + job.Name + ", Id: " + job.Id);
+                await JobServices.EditJob(job.Id, job);
             }
 
-           
+            NavigationManager.NavigateTo("/tasks");
         }
         catch (Exception ex)
         {
-           Console.WriteLine($"Error: {ex.Message} chyba chyba exceptioon!!!!");
+            Console.WriteLine("Error saving job: " + ex.Message);
         }
         finally
         {
-            isSubmitting = false; 
+            isSubmitting = false;
         }
     }
 
-    void HandleInvalidSubmit()
+    private void HandleInvalidSubmit()
     {
         Console.WriteLine("Form submission failed due to invalid data.");
     }

@@ -2989,11 +2989,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA.Shared\\VersionOneWA.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA.Shared\\VersionOneWA.Shared.csproj",
       "projectName": "VersionOneWA.Shared",
-      "projectPath": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA.Shared\\VersionOneWA.Shared.csproj",
+      "projectPath": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA.Shared\\VersionOneWA.Shared.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\admin\\Desktop\\Škola\\Bakalarka\\v1\\Happy Bee\\VersionOneWA.Shared\\obj\\",
+      "outputPath": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

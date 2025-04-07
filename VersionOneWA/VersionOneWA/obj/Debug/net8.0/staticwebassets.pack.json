@@ -1,79 +1,91 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\VersionOneWA.bundle.scp.css",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\VersionOneWA.bundle.scp.css",
       "PackagePath": "staticwebassets\\VersionOneWA.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\SBtask.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\SBtask.png",
       "PackagePath": "staticwebassets\\SBtask.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\app.css",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\background1.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\background1.png",
       "PackagePath": "staticwebassets\\background1.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\background2.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\background2.png",
       "PackagePath": "staticwebassets\\background2.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\beehive.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\beehive.png",
       "PackagePath": "staticwebassets\\beehive.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\beehiveBL.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\beehiveBL.png",
       "PackagePath": "staticwebassets\\beehiveBL.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\beesss.png",
+      "PackagePath": "staticwebassets\\beesss.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\hcomb.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\hcomb.png",
       "PackagePath": "staticwebassets\\hcomb.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\home.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\home.png",
       "PackagePath": "staticwebassets\\home.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\home1.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\home1.png",
       "PackagePath": "staticwebassets\\home1.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\info1.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\info.png",
+      "PackagePath": "staticwebassets\\info.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\info1.png",
       "PackagePath": "staticwebassets\\info1.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\keeperLogin.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\js\\geolocation.js",
+      "PackagePath": "staticwebassets\\js\\geolocation.js"
+    },
+    {
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\keeperLogin.png",
       "PackagePath": "staticwebassets\\keeperLogin.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\login.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\login.png",
       "PackagePath": "staticwebassets\\login.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\task.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\task.png",
       "PackagePath": "staticwebassets\\task.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\user.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\user.png",
       "PackagePath": "staticwebassets\\user.png"
     },
     {
-      "Id": "C:\\Users\\admin\\Desktop\\Škola\\zaaaalooha\\VersionOneWA\\VersionOneWA\\wwwroot\\weather.png",
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\weather.png",
       "PackagePath": "staticwebassets\\weather.png"
     },
     {

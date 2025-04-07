@@ -109,6 +109,126 @@
     ]
   },
   {
+    "ContainingType": "VersionOneWA.Controllers.FriendController",
+    "Method": "AcceptFriendRequest",
+    "RelativePath": "api/friends/accept/{requestId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VersionOneWA.Controllers.FriendController",
+    "Method": "GetFriends",
+    "RelativePath": "api/friends/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VersionOneWA.Controllers.FriendController",
+    "Method": "GetPendingRequests",
+    "RelativePath": "api/friends/pending",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VersionOneWA.Controllers.FriendController",
+    "Method": "RejectFriendRequest",
+    "RelativePath": "api/friends/reject/{requestId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VersionOneWA.Controllers.FriendController",
+    "Method": "GetFriendRequests",
+    "RelativePath": "api/friends/requests",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VersionOneWA.Controllers.FriendController",
+    "Method": "SendFriendRequest",
+    "RelativePath": "api/friends/send/{receiverId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "receiverId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VersionOneWA.Controllers.FriendshipController",
+    "Method": "AddFriend",
+    "RelativePath": "api/Friendship/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "friendId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VersionOneWA.Controllers.FriendshipController",
+    "Method": "GetFriends",
+    "RelativePath": "api/Friendship/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VersionOneWA.Controllers.FriendshipController",
+    "Method": "RemoveFriend",
+    "RelativePath": "api/Friendship/remove/{friendId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "friendId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "VersionOneWA.Controllers.JobController",
     "Method": "AddJob",
     "RelativePath": "api/Job",
@@ -125,6 +245,26 @@
     "ReturnTypes": [
       {
         "Type": "VersionOneWA.Shared.Classes.Job",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VersionOneWA.Controllers.JobController",
+    "Method": "GetAllJobs",
+    "RelativePath": "api/Job",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[VersionOneWA.Shared.Classes.Job, VersionOneWA.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -208,6 +348,32 @@
     "ReturnTypes": [
       {
         "Type": "VersionOneWA.Shared.Classes.Job",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VersionOneWA.Controllers.JobController",
+    "Method": "GetUserJobs",
+    "RelativePath": "api/Job/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[VersionOneWA.Shared.Classes.Job, VersionOneWA.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
