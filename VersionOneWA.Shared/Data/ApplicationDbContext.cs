@@ -14,6 +14,8 @@ namespace VersionOneWA.Data
         public DbSet<Friends> Friends { get; set; } = null!;
         public DbSet<Friendship> Friendships { get; set; }
         public DbSet<FriendRequest> FriendRequests { get; set; }
+        public DbSet<BeehiveBase> BeehiveBases { get; set; }
+        public DbSet<BeehiveMember> BeehiveMembers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -34,6 +36,21 @@ namespace VersionOneWA.Data
             builder.Entity<Friendship>()
                 .HasIndex(f => new { f.UserId1, f.UserId2 })
                 .IsUnique();
+
+
+            //pre BEEHIVEBASE zakaz kaskadoveho mazania
+            builder.Entity<Beehive>()
+                .HasOne(b => b.BeehiveBase)
+                .WithMany(bb => bb.Beehives)
+                .HasForeignKey(b => b.BeehiveBaseId)
+                .OnDelete(DeleteBehavior.Restrict);
+          
+            builder.Entity<Job>()
+                 .HasOne(j => j.BeehiveBase)
+                 .WithMany(bb => bb.Jobs)
+                 .HasForeignKey(j => j.BeehiveBaseId)
+                 .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

@@ -29,9 +29,9 @@ namespace VersionOneWA.Shared.Services
                 .Select(g => new WeatherDailyForecast
                 {
                     Date = g.Key,
-                    Temp = (float)Math.Round(g.Average(f => f.Main.Temp), 1), // Zaokrúhlenie na 1 desatinné miesto
+                    Temp = (float)Math.Round(g.Average(f => f.Main.Temp), 1), 
                     Description = g.First().Weather[0].Description,
-                    Icon = g.First().Weather[0].Icon  // Pridanie ikony
+                    Icon = g.First().Weather[0].Icon 
                 })
                 .Take(5)
                 .ToList();

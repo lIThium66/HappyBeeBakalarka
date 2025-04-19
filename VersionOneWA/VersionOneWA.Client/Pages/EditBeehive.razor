@@ -22,15 +22,18 @@ else
 
         <div class="form-group">
             <label>Name</label>
-            <InputText @bind-Value="beehive.Name"/><br>
-            @*<ValidationMessage For="@(() => beehive.Name)" class="validation-message" /> <br>*@
+            <InputText @bind-Value="beehive.Name" class="form-control" />
+
             <label>Beehive weight</label>
-            <InputNumber @bind-Value="beehive.beehiveWeight" TValue="double?"/>
+            <InputNumber @bind-Value="beehive.beehiveWeight" TValue="double?" class="form-control" />
+
             <label>Number of bees</label>
-            <InputNumber @bind-Value="beehive.numberOfBees" TValue="int?"/>
+            <InputNumber @bind-Value="beehive.numberOfBees" TValue="int?" class="form-control" />
+
             <label>Queen's age</label>
-            <InputNumber @bind-Value="beehive.QueensAge" TValue="int?"/>
+            <InputNumber @bind-Value="beehive.QueensAge" TValue="int?" class="form-control" />
         </div>
+
         <br>
         <button type="submit" class="btn btn-primary" disabled="@isSubmitting">Submit</button>
 

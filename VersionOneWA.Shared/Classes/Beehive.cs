@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VersionOneWA.Shared.Classes
 {
@@ -16,5 +17,11 @@ namespace VersionOneWA.Shared.Classes
         public double? beehiveWeight { get; set; } = 0;
 
         public int? QueensAge { get; set; } = 0;
+
+        //beehivebase
+
+        public int BeehiveBaseId { get; set; }
+        [ForeignKey("BeehiveBaseId")]
+        public BeehiveBase BeehiveBase { get; set; } = null!;
     }
 }

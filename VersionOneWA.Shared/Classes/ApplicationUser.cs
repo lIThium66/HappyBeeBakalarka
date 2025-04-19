@@ -10,7 +10,11 @@ namespace VersionOneWA.Shared.Classes
         public string Surname { get; set; } = null!;
         public ICollection<Job> Jobs { get; set; }
         public ICollection<Friends> Friends { get; set; }
+        public ICollection<BeehiveBase> BeehiveBases { get; set; }
 
+
+
+        //priatelia
         public ICollection<FriendRequest> SentRequests { get; set; }
         public ICollection<FriendRequest> ReceivedRequests { get; set; }
     }

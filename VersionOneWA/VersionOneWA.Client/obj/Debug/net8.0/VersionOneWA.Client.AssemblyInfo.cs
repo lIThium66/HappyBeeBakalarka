@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VersionOneWA.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b62456e1f726191f89876bd252f48cf67f41c832")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e2ce28b38fe85684bddf6ed68ccae26ec2a35c0")]
 [assembly: System.Reflection.AssemblyProductAttribute("VersionOneWA.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VersionOneWA.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
