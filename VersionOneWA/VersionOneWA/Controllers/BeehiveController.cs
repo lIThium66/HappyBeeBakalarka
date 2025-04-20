@@ -39,5 +39,13 @@ namespace VersionOneWA.Controllers
                 var deletedBeehive = await _beehiveServices.DeleteBeehive(id);
                 return Ok(deletedBeehive);
             }
-        }
+
+            [HttpGet("user/{userId}")]
+            public async Task<ActionResult<List<Job>>> GetUserJobs(string userId)
+            {
+                var beehives = await _beehiveServices.GetUserBeehives(userId);
+                return Ok(beehives);
+            }
+
+    }
 }

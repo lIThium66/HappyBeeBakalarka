@@ -1,7 +1,6 @@
 ﻿@attribute [AllowAnonymous]
 @inject NavigationManager NavigationManager
-
-
+@rendermode InteractiveServer
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -50,25 +49,39 @@
             </NavLink>
         </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="tasks">
-                <!--- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Tasks -->
-                <img src="task.png" alt="AddTask" style="width: 28px; height:28px; margin: 10px;" /> Tasks
+          <div class="nav-item px-3">
+            <NavLink class="nav-link" href="beehivebase" @onclick ="() => isExpanded = !isExpanded">
+               <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> BASE TEST 
+@*                  <img src="task.png" alt="beehivebase" style="width: 28px; height:28px; margin: 10px;" /> BASE TEST *@
             </NavLink>
         </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="beehives">
-                <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
-                <img src="beehiveBL.png" alt="Beehives" style="width: 28px; height: 28px; margin: 10px;" /> Beehives
-            </NavLink>
+        @if(isExpanded) {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="tasks">
+                    <!--- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Tasks -->
+                    <img src="task.png" alt="AddTask" style="width: 28px; height:28px; margin: 10px;" /> Tasks
+                </NavLink>
+            </div>
 
-        </div>  
-        
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="done-tasks">
+                    <!--- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Tasks -->
+                    <img src="donetask1.png" alt="FinishedTasks" style="width: 28px; height:28px; margin: 10px;" /> Finished Work
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="beehives">
+                    <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
+                    <img src="beehiveBL.png" alt="Beehives" style="width: 28px; height: 28px; margin: 10px;" /> Beehives
+                </NavLink>
+
+            </div>  
+        } 
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="bee-friends">
                 <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
-                <img src="beesss.png" alt="Bee-friends" style="width: 28px; height: 28px; margin: 10px;" /> Bee Friends
+                <img src="findingnobg.png" alt="Bee-friends" style="width: 28px; height: 28px; margin: 10px;" /> Bee Friends
             </NavLink>
         </div>
 
@@ -79,12 +92,16 @@
             </NavLink>
         </div>
 
-        
-
-
-             </Authorized>
+          <div class="nav-item px-3">
+            <NavLink class="nav-link" href="friend-requests">
+                <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
+                <img src="beefriendsnobg.png" alt="Friend-requests" style="width: 28px; height: 28px; margin: 10px;" /> Friend Requests
+            </NavLink>
+        </div>
+  
+            </Authorized>
         </AuthorizeView>
-        
+
 
     </nav>
 </div>
@@ -104,13 +121,14 @@
 
 @code {
     private string? currentUrl;
+    bool isExpanded = false;
 
     protected override void OnInitialized()
     {
         currentUrl = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
         NavigationManager.LocationChanged += OnLocationChanged;
     }
-
+ 
     private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
     {
         currentUrl = NavigationManager.ToBaseRelativePath(e.Location);

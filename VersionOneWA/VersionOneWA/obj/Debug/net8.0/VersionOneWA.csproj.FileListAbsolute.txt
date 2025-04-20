@@ -619,3 +619,5 @@ C:\Users\admin\OneDrive - Žilinská univerzita v Žiline\Škola\VAIIIIIIIIIII\V
 C:\Users\admin\OneDrive - Žilinská univerzita v Žiline\Škola\VAIIIIIIIIIII\VersionOneWA\VersionOneWA\obj\Debug\net8.0\VersionOneWA.RazorAssemblyInfo.cache
 C:\Users\admin\OneDrive - Žilinská univerzita v Žiline\Škola\VAIIIIIIIIIII\VersionOneWA\VersionOneWA\obj\Debug\net8.0\VersionOneWA.RazorAssemblyInfo.cs
 C:\Users\admin\OneDrive - Žilinská univerzita v Žiline\Škola\VAIIIIIIIIIII\VersionOneWA\VersionOneWA\obj\Debug\net8.0\scopedcss\Components\Pages\Weather.razor.rz.scp.css
+C:\Users\admin\OneDrive - Žilinská univerzita v Žiline\Škola\VAIIIIIIIIIII\VersionOneWA\VersionOneWA\obj\Debug\net8.0\scopedcss\Components\Pages\DoneTasks.razor.rz.scp.css
+C:\Users\admin\OneDrive - Žilinská univerzita v Žiline\Škola\VAIIIIIIIIIII\VersionOneWA\VersionOneWA\obj\Debug\net8.0\scopedcss\Components\Pages\FriendsPage.razor.rz.scp.css

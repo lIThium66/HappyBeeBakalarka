@@ -27,4 +27,7 @@ builder.Services.AddScoped<IBeehiveService, ClientBeehiveService>();
 builder.Services.AddScoped<IStatusServices, ClientStatusService>();
 builder.Services.AddScoped<IFriendshipService, ClientFriendshipService>();
 builder.Services.AddScoped<IFriendService, ClientFriendService>();
+//
+//builder.Services.AddScoped<IBeehiveBaseService, ClientBeehiveBaseService>();
+
 await builder.Build().RunAsync();

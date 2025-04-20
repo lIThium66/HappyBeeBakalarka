@@ -16,19 +16,15 @@ namespace VersionOneWA.Shared.Classes
         public string Name { get; set; }
 
 
-        public string UserId { get; set; }
-        [ForeignKey("UserId")]
-        public ApplicationUser User { get; set; }
+        //public string UserId { get; set; }
+        //[ForeignKey("UserId")]
+        //public ApplicationUser User { get; set; } = null!;
 
 
-        public int BeehiveId { get; set; }
-        [ForeignKey("BeehiveId")]
-        public Beehive Beehive { get; set; }
+        //public int BeehiveBaseId { get; set; }
+        //[ForeignKey("BeehiveBaseId")]
+        //public BeehiveBase BeehiveBase { get; set; } = null!;
 
-
-        public string RoleId { get; set; }
-        [ForeignKey("RoleId")]
-        public IdentityRole Role { get; set; }
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
 @inject UserManager<ApplicationUser> UserManager
 @inject IJobServices JobService
 @inject AuthenticationStateProvider AuthenticationStateProvider
@@ -33,7 +34,7 @@
 <div class="urgent-tasks-container">
     @for (int i = 0; i < jobs.Count; i++)
     {
-        if (jobs[i].Priority == 1)
+        if (jobs[i].Priority == 1 && !jobs[i].IsCompleted)
         {
             <div class="task-card urgent">
                 <h2>@jobs[i].Name</h2>
@@ -58,7 +59,7 @@
 <div class="deadline-tasks-container">
     @for (int i = 0; i < jobs.Count; i++)
     {
-        if (jobs[i].Priority != 1 && jobs[i].JobDate.HasValue && jobs[i].JobDate <= DateTime.Now.AddDays(3))
+        if (jobs[i].Priority != 1 && jobs[i].JobDate.HasValue && jobs[i].JobDate <= DateTime.Now.AddDays(3) &&  !jobs[i].IsCompleted)
         {
             <div class="task-card">
                 <h2>@jobs[i].Name</h2>
@@ -83,18 +84,22 @@
 
     List<Job>? jobs = new List<Job>();
     private string userName = "Unknown";
+    private string? currentUserId;
+
 
     protected override async Task OnInitializedAsync()
     {
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
 
+        var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier);
+
         if (user.Identity != null && user.Identity.IsAuthenticated)
         {
             var appUser = await UserManager.GetUserAsync(user);
             if (!string.IsNullOrEmpty(user.Identity.Name))
             {
-
+                currentUserId = userIdClaim.Value;
                 userName = appUser.Name;
             }
             else
@@ -103,7 +108,11 @@
             }
         }
 
-        jobs = await JobService.GetAllJobs();
+        if (!string.IsNullOrEmpty(currentUserId))
+        {
+            jobs = await JobService.GetUserJobs(currentUserId);
+        }
+  
     }
 
 

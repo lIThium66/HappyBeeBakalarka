@@ -36,17 +36,21 @@ else if (jobs.Count == 0)
 }
 else
 {
-    <div class="tasks-container">
+    <div class="tasks-container scrollable-tasks-list">
         @foreach (var job in jobs)
         {
-            <div class="task-card" style="@GetBorderStyle(job.Priority)">
-                <h2>@job.Name </h2>
-                <h5>@job.Description</h5>
-                <div class="task-buttons">
-                    <EditJobButton Id="job.Id" />
-                    <DeleteJobButton Id="job.Id" OnJobDeleted="HandleJobDeleted" />
+            @if (!job.IsCompleted)
+            {
+                <div class="task-card" style="@GetBorderStyle(job.Priority)" title="@job.Description" >
+                    <h2>@job.Name </h2>
+                    <h5>@(job.Description?.Length > 100 ? job.Description.Substring(0, 100) + "..." : job.Description)</h5>
+                    <div class="task-buttons">
+                        <EditJobButton Id="job.Id" />
+                        <DeleteJobButton Id="job.Id" OnJobDeleted="HandleJobDeleted" />
+                        <button class="btn bg-success" Color="ButtonColor.Success" @onclick="@(() => MarkAsComplete(job))">Done</button>
+                    </div>
                 </div>
-            </div>
+            }
         }
 
     </div>
@@ -94,6 +98,14 @@ else
     {
         jobs = jobs?.Where(job => job.Id != id).ToList();
         StateHasChanged();
+    }
+
+
+    private async Task MarkAsComplete(Job job)
+    {
+        job.IsCompleted = true;
+        await JobService.EditJob(job.Id, job);
+        StateHasChanged(); // aktualizuje UI
     }
 
     private string GetBorderStyle(int priority)

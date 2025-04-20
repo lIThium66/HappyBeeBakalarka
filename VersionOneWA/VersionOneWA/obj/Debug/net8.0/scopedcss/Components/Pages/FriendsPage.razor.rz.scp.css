@@ -1,0 +1,7 @@
+body[b-505ssx9fxz] {
+}
+.scrollable-user-list[b-505ssx9fxz] {
+    max-height: calc(100vh - 250px); /* prispôsob si podľa veľkosti hlavičky/vyhľadávania */
+    overflow-y: auto;
+    padding-right: 10px;
+}

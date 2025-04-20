@@ -39,17 +39,23 @@ namespace VersionOneWA.Data
 
 
             //pre BEEHIVEBASE zakaz kaskadoveho mazania
-            builder.Entity<Beehive>()
-                .HasOne(b => b.BeehiveBase)
-                .WithMany(bb => bb.Beehives)
-                .HasForeignKey(b => b.BeehiveBaseId)
-                .OnDelete(DeleteBehavior.Restrict);
-          
-            builder.Entity<Job>()
-                 .HasOne(j => j.BeehiveBase)
-                 .WithMany(bb => bb.Jobs)
-                 .HasForeignKey(j => j.BeehiveBaseId)
-                 .OnDelete(DeleteBehavior.Restrict);
+            //builder.Entity<Beehive>()
+            //    .HasOne(b => b.BeehiveBase)
+            //    .WithMany(bb => bb.Beehives)
+            //    .HasForeignKey(b => b.BeehiveBaseId)
+            //    .OnDelete(DeleteBehavior.Restrict);
+
+            //builder.Entity<Job>()
+            //     .HasOne(j => j.BeehiveBase)
+            //     .WithMany(bb => bb.Jobs)
+            //     .HasForeignKey(j => j.BeehiveBaseId)
+            //     .OnDelete(DeleteBehavior.Restrict);
+
+            //builder.Entity<BeehiveMember>()
+            //    .HasOne(m => m.BeehiveBase)
+            //    .WithMany(b => b.BeehiveMembers)
+            //    .HasForeignKey(m => m.BeehiveBaseId)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
         }
     }

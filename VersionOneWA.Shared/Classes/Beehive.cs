@@ -18,10 +18,16 @@ namespace VersionOneWA.Shared.Classes
 
         public int? QueensAge { get; set; } = 0;
 
+        //userko
+        public string UserId { get; set; } = null!;
+
+        [ForeignKey("UserId")]
+        public ApplicationUser User { get; set; } = null!;
+
         //beehivebase
 
-        public int BeehiveBaseId { get; set; }
-        [ForeignKey("BeehiveBaseId")]
-        public BeehiveBase BeehiveBase { get; set; } = null!;
+        //public int BeehiveBaseId { get; set; }
+        //[ForeignKey("BeehiveBaseId")]
+        //public BeehiveBase BeehiveBase { get; set; } = null!;
     }
 }

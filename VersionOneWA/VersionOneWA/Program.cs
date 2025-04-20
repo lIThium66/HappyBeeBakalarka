@@ -36,13 +36,20 @@ builder.Services.AddScoped(http => new HttpClient
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
+
+
 builder.Services.AddScoped<IJobServices, JobServices>();
 builder.Services.AddScoped<IBeehiveService, BeehiveService>();
 builder.Services.AddScoped<IStatusServices, StatusServices>();
 builder.Services.AddScoped<IFriendService, FriendService>();
 builder.Services.AddScoped<IFriendshipService, FriendshipService>();
 
+//
+//builder.Services.AddScoped<IBeehiveBaseService, BeehiveBaseService>();
+
 builder.Services.AddHttpClient<WeatherService>();
+
 
 
 

@@ -1,0 +1,45 @@
+﻿@* @using VersionOneWA.Shared.Classes
+@inject IBeehiveService BeehiveService
+
+@if (beehives == null)
+{
+    <p>Loading beehives...</p>
+}
+else if (beehives.Count == 0)
+{
+    <p>No beehives found for this base.</p>
+}
+else
+{
+    <div class="hives-container">
+        @foreach (var beehive in beehives)
+        {
+            <div class="hive-card">
+                <h3>@beehive.Name</h3>
+                <p>Weight: @beehive.beehiveWeight kg</p>
+                <p>Bees: @beehive.numberOfBees</p>
+                <EditBeehiveButton Id="beehive.Id" />
+                <DeleteBeehiveButton Id="beehive.Id" OnBeehiveDeleted="HandleBeehiveDeleted" />
+            </div>
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int BaseId { get; set; }
+
+    private List<Beehive>? beehives;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        beehives = await BeehiveService.GetBeehivesByBaseId(BaseId);
+    }
+
+    private async Task HandleBeehiveDeleted(int id)
+    {
+        beehives = beehives?.Where(b => b.Id != id).ToList();
+        StateHasChanged();
+    }
+}
+ *@

@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\background2.png"
     },
     {
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\beefriendsnobg.png",
+      "PackagePath": "staticwebassets\\beefriendsnobg.png"
+    },
+    {
       "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\beehive.png",
       "PackagePath": "staticwebassets\\beehive.png"
     },
@@ -41,8 +45,28 @@
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\donetask1.png",
+      "PackagePath": "staticwebassets\\donetask1.png"
+    },
+    {
       "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\findbeebgrem.png",
+      "PackagePath": "staticwebassets\\findbeebgrem.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\findbeebgrem_2x.png",
+      "PackagePath": "staticwebassets\\findbeebgrem_2x.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\finding.png",
+      "PackagePath": "staticwebassets\\finding.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\findingnobg.png",
+      "PackagePath": "staticwebassets\\findingnobg.png"
     },
     {
       "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\hcomb.png",
@@ -75,6 +99,10 @@
     {
       "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\login.png",
       "PackagePath": "staticwebassets\\login.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\removedbeefriend.png",
+      "PackagePath": "staticwebassets\\removedbeefriend.png"
     },
     {
       "Id": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\task.png",

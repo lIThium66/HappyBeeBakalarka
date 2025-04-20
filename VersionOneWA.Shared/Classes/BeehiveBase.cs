@@ -12,19 +12,19 @@ namespace VersionOneWA.Shared.Classes
     {
         [Key]
         public int Id { get; set; }
-        
+
         [Required]
         public string Name { get; set; } = null!;
 
-        public ICollection<Job> Jobs { get; set; }
-        public ICollection<Beehive> Beehives { get; set; }
-        public ICollection<BeehiveMember> BeehiveMembers { get; set; }
+        //public ICollection<Job> Jobs { get; set; }
+        //public ICollection<Beehive> Beehives { get; set; }
+        //public ICollection<BeehiveMember> BeehiveMembers { get; set; }
 
 
-        public string UserId { get; set; } = null!;
-        [ForeignKey("UserId")]
-        public ApplicationUser User { get; set; } = null!; //toto bude owner
+        //public string UserId { get; set; } = null!;
+        //[ForeignKey("UserId")]
+        //public ApplicationUser User { get; set; } = null!; //toto bude owner
 
-        
+
     }
 }

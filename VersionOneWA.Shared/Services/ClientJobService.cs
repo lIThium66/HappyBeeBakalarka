@@ -51,5 +51,7 @@ namespace VersionOneWA.Shared.Services
         {
             return await _httpClient.GetFromJsonAsync<List<Job>>($"/api/job/user/{userId}");
         }
+
+
     }
 }

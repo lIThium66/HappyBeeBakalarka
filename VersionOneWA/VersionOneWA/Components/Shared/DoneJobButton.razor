@@ -1,0 +1,22 @@
+﻿@inject IJobServices JobService
+@inject NavigationManager NavigationManager
+
+<button class="btn btn-dark" type="button" @onclick="Done">
+    <strong>Done</strong>
+</button>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    [Parameter]
+    public EventCallback<int> JobComplete { get; set; }
+
+
+
+    private async Task Done()
+    {
+        NavigationManager.NavigateTo("/tasks");
+
+    }
+}

@@ -34,6 +34,8 @@ namespace VersionOneWA.Shared.Services
             return await result.Content.ReadFromJsonAsync<Beehive>();
         }
 
+
+
         public Task<List<Beehive>> GetAllBeehives()
         {
             throw new NotImplementedException();
@@ -43,6 +45,12 @@ namespace VersionOneWA.Shared.Services
         {
             var result = await _httpClient.GetFromJsonAsync<Beehive>($"/api/beehive/{id}");
             return result;
+        }
+
+        public async Task<List<Beehive>> GetUserBeehives(string userId)
+        {
+            return await _httpClient.GetFromJsonAsync<List<Beehive>>($"/api/beehive/user/{userId}");
+
         }
     }
 }

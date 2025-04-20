@@ -1,0 +1,7 @@
+﻿body {
+}
+.scrollable-user-list {
+    max-height: calc(100vh - 250px); /* prispôsob si podľa veľkosti hlavičky/vyhľadávania */
+    overflow-y: auto;
+    padding-right: 10px;
+}

@@ -239,15 +239,16 @@ namespace VersionOneWA.Shared.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("BeehiveBaseId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("QueensAge")
                         .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<double?>("beehiveWeight")
                         .HasColumnType("float");
@@ -257,7 +258,7 @@ namespace VersionOneWA.Shared.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BeehiveBaseId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Beehives");
                 });
@@ -274,15 +275,9 @@ namespace VersionOneWA.Shared.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
-
-                    b.ToTable("BeehiveBase");
+                    b.ToTable("BeehiveBases");
                 });
 
             modelBuilder.Entity("VersionOneWA.Shared.Classes.BeehiveMember", b =>
@@ -293,35 +288,13 @@ namespace VersionOneWA.Shared.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("BeehiveBaseId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BeehiveId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("BeehiveBaseId");
-
-                    b.HasIndex("BeehiveId");
-
-                    b.HasIndex("RoleId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("BeehiveMember");
+                    b.ToTable("BeehiveMembers");
                 });
 
             modelBuilder.Entity("VersionOneWA.Shared.Classes.FriendRequest", b =>
@@ -427,14 +400,11 @@ namespace VersionOneWA.Shared.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("BeehiveBaseId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<bool?>("IsCompleted")
+                    b.Property<bool>("IsCompleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("JobDate")
@@ -452,8 +422,6 @@ namespace VersionOneWA.Shared.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BeehiveBaseId");
 
                     b.HasIndex("UserId");
 
@@ -529,53 +497,11 @@ namespace VersionOneWA.Shared.Migrations
 
             modelBuilder.Entity("VersionOneWA.Shared.Classes.Beehive", b =>
                 {
-                    b.HasOne("VersionOneWA.Shared.Classes.BeehiveBase", "BeehiveBase")
+                    b.HasOne("VersionOneWA.Shared.Classes.ApplicationUser", "User")
                         .WithMany("Beehives")
-                        .HasForeignKey("BeehiveBaseId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("BeehiveBase");
-                });
-
-            modelBuilder.Entity("VersionOneWA.Shared.Classes.BeehiveBase", b =>
-                {
-                    b.HasOne("VersionOneWA.Shared.Classes.ApplicationUser", "User")
-                        .WithMany("BeehiveBases")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("VersionOneWA.Shared.Classes.BeehiveMember", b =>
-                {
-                    b.HasOne("VersionOneWA.Shared.Classes.BeehiveBase", null)
-                        .WithMany("BeehiveMembers")
-                        .HasForeignKey("BeehiveBaseId");
-
-                    b.HasOne("VersionOneWA.Shared.Classes.Beehive", "Beehive")
-                        .WithMany()
-                        .HasForeignKey("BeehiveId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("VersionOneWA.Shared.Classes.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Beehive");
-
-                    b.Navigation("Role");
 
                     b.Navigation("User");
                 });
@@ -627,26 +553,18 @@ namespace VersionOneWA.Shared.Migrations
 
             modelBuilder.Entity("VersionOneWA.Shared.Classes.Job", b =>
                 {
-                    b.HasOne("VersionOneWA.Shared.Classes.BeehiveBase", "BeehiveBase")
-                        .WithMany("Jobs")
-                        .HasForeignKey("BeehiveBaseId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("VersionOneWA.Shared.Classes.ApplicationUser", "User")
                         .WithMany("Jobs")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("BeehiveBase");
-
                     b.Navigation("User");
                 });
 
             modelBuilder.Entity("VersionOneWA.Shared.Classes.ApplicationUser", b =>
                 {
-                    b.Navigation("BeehiveBases");
+                    b.Navigation("Beehives");
 
                     b.Navigation("Friends");
 
@@ -655,15 +573,6 @@ namespace VersionOneWA.Shared.Migrations
                     b.Navigation("ReceivedRequests");
 
                     b.Navigation("SentRequests");
-                });
-
-            modelBuilder.Entity("VersionOneWA.Shared.Classes.BeehiveBase", b =>
-                {
-                    b.Navigation("BeehiveMembers");
-
-                    b.Navigation("Beehives");
-
-                    b.Navigation("Jobs");
                 });
 #pragma warning restore 612, 618
         }

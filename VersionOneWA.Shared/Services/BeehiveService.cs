@@ -52,6 +52,7 @@ namespace VersionOneWA.Shared.Services
             throw new Exception("Task not found.");
         }
 
+
         public async Task<List<Beehive>> GetAllBeehives()
         {
             var beehives = await _happyBeeContext.Beehives.ToListAsync();
@@ -62,5 +63,20 @@ namespace VersionOneWA.Shared.Services
         {
             return await _happyBeeContext.Beehives.FindAsync(id);
         }
+
+        public async Task<List<Beehive>> GetUserBeehives(string userId)
+        {
+           return await _happyBeeContext.Beehives.Where(j => j.UserId == userId).ToListAsync();
+        }
+
+
+
+        //
+        //public async Task<List<Beehive>> GetBeehivesByBaseId(int baseId)
+        //{
+        //    return await _happyBeeContext.Beehives
+        //        .Where(b => b.BeehiveBaseId == baseId)
+        //        .ToListAsync();
+        //}
     }
 }

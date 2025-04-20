@@ -2,9 +2,11 @@
 @using Microsoft.AspNetCore.Authorization
 @rendermode InteractiveServer
 @attribute [StreamRendering]
-
-
+@inject AuthenticationStateProvider AuthenticationStateProvider
 @inject IBeehiveService BeehiveService
+@inject NavigationManager NavigationManager
+@using System.Security.Claims
+
 
 
 
@@ -46,10 +48,34 @@ else
 
     List<Beehive>? beehives = null;
 
+    private string? currentUserId;
 
     protected override async Task OnInitializedAsync()
     {
-        beehives = await BeehiveService.GetAllBeehives();
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity == null || !user.Identity.IsAuthenticated)
+        {
+            NavigationManager.NavigateTo("/login");
+
+            return;
+        }
+
+        var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier);
+        if (userIdClaim != null)
+        {
+            currentUserId = userIdClaim.Value;
+        }
+
+        if (!string.IsNullOrEmpty(currentUserId))
+        {
+            beehives = await BeehiveService.GetUserBeehives(currentUserId);
+        }
+        if (user.IsInRole("Admin"))
+        {
+            beehives = await BeehiveService.GetAllBeehives();
+        }
     }
 
     private async Task HandleBeehiveDeleted(int id)

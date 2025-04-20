@@ -11,5 +11,8 @@ namespace VersionOneWA.Shared.Services
         Task<bool> DeleteJob(int id);
 
         Task<List<Job>> GetUserJobs(string userId);
+
+ 
+
     }
 }

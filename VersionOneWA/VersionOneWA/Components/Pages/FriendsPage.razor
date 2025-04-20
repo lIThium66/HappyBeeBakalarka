@@ -18,7 +18,7 @@
                @bind="searchQuery"
                @oninput="async () => await Search()" />
         <div class="input-group-append">
-            <button class="btn btn-outline-secondary" @onclick="async () => await Search()">
+            <button class="btn btn-primary" @onclick="async () => await Search()">🔍
                 <i class="fas fa-search"></i>
             </button>
         </div>
@@ -35,7 +35,7 @@ else if (!filteredUsers.Any())
 }
 else
 {
-    <div class="user-list">
+    <div class="user-list scrollable-user-list" >
         @foreach (var user in filteredUsers)
         {
             <div class="user-item card mb-3">

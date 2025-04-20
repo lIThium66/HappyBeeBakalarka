@@ -1,0 +1,49 @@
+﻿@* @using VersionOneWA.Shared.Classes
+@inject IJobServices JobService
+
+@if (jobs == null)
+{
+    <p>Loading tasks...</p>
+}
+else if (jobs.Count == 0)
+{
+    <p>No tasks found for this base.</p>
+}
+else
+{
+    <div class="tasks-container">
+        @foreach (var job in jobs)
+        {
+            <div class="task-card" style="@GetBorderStyle(job.Priority)">
+                <h3>@job.Name</h3>
+                <p>@job.Description</p>
+                <EditJobButton Id="job.Id" />
+                <DeleteJobButton Id="job.Id" OnJobDeleted="HandleJobDeleted" />
+            </div>
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int BaseId { get; set; }
+
+    private List<Job>? jobs;
+
+
+
+    private async Task HandleJobDeleted(int id)
+    {
+        jobs = jobs?.Where(j => j.Id != id).ToList();
+        StateHasChanged();
+    }
+
+    private string GetBorderStyle(int priority) => priority switch
+    {
+        1 => "border: 4px solid red;",
+        2 => "border: 4px solid green;",
+        3 => "border: 4px solid black;",
+        _ => "border: 2px solid gray;"
+    };
+}
+ *@

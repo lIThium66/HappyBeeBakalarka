@@ -14,5 +14,8 @@ namespace VersionOneWA.Shared.Services
         Task<Beehive> AddBeehive(Beehive beehive);
         Task<Beehive> EditBeehive(int id, Beehive beehive);
         Task<bool> DeleteBeehive(int id);
+
+        Task<List<Beehive>> GetUserBeehives(string userId);
+
     }
 }

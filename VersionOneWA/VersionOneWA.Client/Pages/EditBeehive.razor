@@ -1,8 +1,10 @@
 ﻿@page "/edit-beehives"
-@page "/edit-beehives/{id:int}"
+@page "/edit-beehives/{Id:int}"
 @inject IBeehiveService BeehiveService
-@rendermode InteractiveAuto
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@using System.Security.Claims
+@rendermode InteractiveAuto
 
 @if (Id == null)
 {
@@ -12,7 +14,7 @@ else
 {
     <h2>Edit @beehive.Name</h2>
 }
-@*toto prepisat!!!!*@
+
 <h3>What’s the buzz today?</h3>
 <h5>Every bee knows: no tasks, no honey. Keep the hive alive and thriving!</h5>
 
@@ -27,8 +29,8 @@ else
             <label>Beehive weight</label>
             <InputNumber @bind-Value="beehive.beehiveWeight" TValue="double?" class="form-control" />
 
-            <label>Number of bees</label>
-            <InputNumber @bind-Value="beehive.numberOfBees" TValue="int?" class="form-control" />
+       @*      <label>Number of bees</label>
+            <InputNumber @bind-Value="beehive.numberOfBees" TValue="int?" class="form-control" /> *@
 
             <label>Queen's age</label>
             <InputNumber @bind-Value="beehive.QueensAge" TValue="int?" class="form-control" />
@@ -41,18 +43,43 @@ else
     </EditForm>
 </div>
 
-
-
 @code {
+    [Parameter] public int? Id { get; set; }
 
-    [Parameter]
-    public int? Id { get; set; }
-    Beehive beehive { get; set; } = new Beehive { Name = string.Empty, beehiveWeight = 0, numberOfBees = 0, QueensAge = 0 };
-    EditContext editContext;
-    private bool isSubmitting = false;
-
-    protected override void OnInitialized()
+    private Beehive beehive = new()
     {
+        Name = string.Empty,
+        beehiveWeight = 0,
+        numberOfBees = 0,
+        QueensAge = 0
+    };
+
+    private EditContext editContext;
+    private bool isSubmitting = false;
+    private string? currentUserId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity == null || !user.Identity.IsAuthenticated)
+        {
+            NavigationManager.NavigateTo("/login");
+            return;
+        }
+
+        var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier);
+        if (userIdClaim != null)
+        {
+            currentUserId = userIdClaim.Value;
+        }
+
+        if (string.IsNullOrEmpty(currentUserId))
+        {
+            throw new Exception("User ID is null! Make sure authentication is properly configured.");
+        }
+
         editContext = new EditContext(beehive);
     }
 
@@ -60,24 +87,26 @@ else
     {
         if (Id == null)
         {
-            beehive = new Beehive { Name = string.Empty, beehiveWeight = 0, numberOfBees = 0, QueensAge = 0 };
-            editContext = new EditContext(beehive);
-            return;
+            beehive = new Beehive
+            {
+                Name = string.Empty,
+                beehiveWeight = 0,
+                numberOfBees = 0,
+                QueensAge = 0
+            };
+        }
+        else
+        {
+            var existing = await BeehiveService.GetBeehiveById((int)Id);
+            beehive = existing ?? new Beehive();
         }
 
-        beehive = await BeehiveService.GetBeehiveById((int)Id);
         editContext = new EditContext(beehive);
+        StateHasChanged();
     }
 
-
-    async Task HandleSubmit()
+    private async Task HandleSubmit()
     {
-        GetNumberOfBees();
-        Console.WriteLine($"Beehive nazov: {beehive.Name}");
-        if (beehive.Name == string.Empty)
-        {
-            return;
-        }
         if (isSubmitting)
             return;
 
@@ -85,23 +114,28 @@ else
 
         try
         {
+            GetNumberOfBees();
+
+            if (string.IsNullOrWhiteSpace(beehive.Name))
+                return;
+
             if (Id == null)
             {
+                beehive.UserId = currentUserId;
+                Console.WriteLine("Creating Beehive: " + beehive.Name + ", UserId: " + beehive.UserId);
                 await BeehiveService.AddBeehive(beehive);
-                NavigationManager.NavigateTo("/beehives");
             }
             else
             {
-                await BeehiveService.EditBeehive((int)Id, beehive);
-                NavigationManager.NavigateTo("/beehives");
-
+                Console.WriteLine("Editing Beehive: " + beehive.Name + ", Id: " + beehive.Id);
+                await BeehiveService.EditBeehive(beehive.Id, beehive);
             }
 
-
+            NavigationManager.NavigateTo("/beehives");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error: {ex.Message}");
+            Console.WriteLine("Error saving beehive: " + ex.Message);
         }
         finally
         {
@@ -109,19 +143,17 @@ else
         }
     }
 
-    void HandleInvalidSubmit()
+    private void HandleInvalidSubmit()
     {
         Console.WriteLine("Form submission failed due to invalid data.");
     }
 
-    private double? GetNumberOfBees()
+    private void GetNumberOfBees()
     {
-        double weight = beehive.beehiveWeight ?? 0;
         if (beehive.beehiveWeight.HasValue)
         {
+            double weight = beehive.beehiveWeight.Value;
             beehive.numberOfBees = (int?)Math.Ceiling((weight / 0.000120) * 2);
         }
-        return beehive.numberOfBees;
     }
-
 }
