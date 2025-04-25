@@ -436,10 +436,33 @@ namespace VersionOneWA.Shared.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Report")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool?>("doneTreatment")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("suppliedSugar")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("suppliedWater")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Status");
                 });
@@ -555,6 +578,17 @@ namespace VersionOneWA.Shared.Migrations
                 {
                     b.HasOne("VersionOneWA.Shared.Classes.ApplicationUser", "User")
                         .WithMany("Jobs")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("VersionOneWA.Shared.Classes.Status", b =>
+                {
+                    b.HasOne("VersionOneWA.Shared.Classes.ApplicationUser", "User")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

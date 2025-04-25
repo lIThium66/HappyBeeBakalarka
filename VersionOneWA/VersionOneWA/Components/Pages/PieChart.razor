@@ -1,0 +1,24 @@
+﻿@using MudBlazor
+
+<MudPaper Elevation="2" Class="pa-4 my-4">
+    <MudText Typo="Typo.h6">Task Overview</MudText>
+    <MudPieChart ChartSeries="series" Labels="labels" />
+</MudPaper>
+
+@code {
+    [Parameter] public int DoneTasks { get; set; }
+    [Parameter] public int TotalTasks { get; set; }
+
+    private List<ChartSeries> series = new();
+    private string[] labels = new[] { "Done Tasks", "Remaining Tasks" };
+
+    protected override void OnInitialized()
+    {
+        var remaining = TotalTasks - DoneTasks;
+
+        series = new List<ChartSeries>
+        {
+            new ChartSeries { Name = "Tasks", Data = new double[] { DoneTasks, remaining } }
+        };
+    }
+}

@@ -1,4 +1,7 @@
 is_global = true
+build_property.MudDebugAnalyzer = 
+build_property.MudAllowedAttributePattern = 
+build_property.MudAllowedAttributeList = 
 build_property.TargetFramework = net8.0
 build_property.TargetFramework = net8.0
 build_property.TargetPlatformMinVersion = 
@@ -190,10 +193,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbmRleC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/Pages/InfoStatistics.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbmZvU3RhdGlzdGljcy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/Pages/Logout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -202,8 +201,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYW5hZ2VVc2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/Pages/StatusSite.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTdGF0dXNTaXRlLnJhem9y
+[C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/Pages/PieChart.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQaWVDaGFydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/Pages/ReportPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZXBvcnRQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/Pages/TasksList.razor]

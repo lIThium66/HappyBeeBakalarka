@@ -1,0 +1,78 @@
+﻿@page "/report"
+@inject IStatusServices StatusService
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@using System.Security.Claims
+@rendermode InteractiveAuto
+@attribute [StreamRendering]
+
+<h3>Reports</h3>
+<h5>Manage your efficiently.</h5>
+
+<CreateInfoButton></CreateInfoButton>
+<br>
+
+@if (statuses == null)
+{
+    <span>Loading...</span>
+    <br>
+}
+else if (statuses.Count == 0)
+{
+    <span>No statuses found.</span>
+    <br>
+}
+else
+{
+    <div class="tasks-container">
+        @foreach (var status in statuses)
+        {
+            <div class="task-card">
+                <h2>@status.Name</h2>
+                <div class="task-buttons">
+                    <EditInfoButton Id="status.Id" />
+                    <DeleteInfoButton Id="status.Id" OnStatusDelete = "HandleInfoDeleted" />
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private List<Status>? statuses = null;
+    private string? currentUserId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity == null || !user.Identity.IsAuthenticated)
+        {
+            NavigationManager.NavigateTo("/login");
+            return;
+        }
+
+        var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier);
+        if (userIdClaim != null)
+        {
+            currentUserId = userIdClaim.Value;
+        }
+
+        if (!string.IsNullOrEmpty(currentUserId))
+        {
+            statuses = await StatusService.GetUserStatuses(currentUserId);
+        }
+
+        if (user.IsInRole("Admin"))
+        {
+            statuses = await StatusService.GetStatuses(); 
+        }
+    }
+
+    private async Task HandleInfoDeleted(int id)
+    {
+        statuses = statuses?.Where(status => status.Id != id).ToList();
+        StateHasChanged();
+    }
+}

@@ -9,6 +9,7 @@ using VersionOneWA.Shared.Services;
 using VersionOneWA.Data;
 using VersionOneWA.Components.Shared;
 using VersionOneWA.Shared.Classes;
+using MudBlazor.Services;
 //using Microsoft.AspNetCore.Identity;
 
 
@@ -50,6 +51,8 @@ builder.Services.AddScoped<IFriendshipService, FriendshipService>();
 
 builder.Services.AddHttpClient<WeatherService>();
 
+//mudblazor
+builder.Services.AddMudServices();
 
 
 
@@ -76,6 +79,8 @@ builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSe
 builder.Services.AddScoped<CookieEvents>();
 
 builder.Services.ConfigureApplicationCookie(opt => {
+    opt.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+    opt.SlidingExpiration = true;
     opt.EventsType = typeof(CookieEvents);
 });
 

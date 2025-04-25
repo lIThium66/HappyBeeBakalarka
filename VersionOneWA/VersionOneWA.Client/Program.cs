@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using MudBlazor.Services;
 using VersionOneWA.Client;
 using VersionOneWA.Shared.Services;
 
@@ -29,5 +30,8 @@ builder.Services.AddScoped<IFriendshipService, ClientFriendshipService>();
 builder.Services.AddScoped<IFriendService, ClientFriendService>();
 //
 //builder.Services.AddScoped<IBeehiveBaseService, ClientBeehiveBaseService>();
+
+builder.Services.AddMudServices();
+
 
 await builder.Build().RunAsync();

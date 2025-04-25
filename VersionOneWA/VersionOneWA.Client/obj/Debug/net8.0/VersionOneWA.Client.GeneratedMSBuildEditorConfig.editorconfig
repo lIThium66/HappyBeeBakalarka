@@ -3,6 +3,9 @@ build_property.EnableAotAnalyzer =
 build_property.EnableSingleFileAnalyzer = 
 build_property.EnableTrimAnalyzer = false
 build_property.IncludeAllContentForSelfExtract = 
+build_property.MudDebugAnalyzer = 
+build_property.MudAllowedAttributePattern = 
+build_property.MudAllowedAttributeList = 
 build_property.TargetFramework = net8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
@@ -30,8 +33,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA.Client/Pages/EditInfo.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEluZm8ucmF6b3I=
+[C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA.Client/Pages/EditStatus.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFN0YXR1cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA.Client/Pages/Test.razor]

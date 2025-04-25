@@ -1,10 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VersionOneWA.Data;
 using VersionOneWA.Shared.Classes;
 
@@ -41,18 +35,24 @@ namespace VersionOneWA.Shared.Services
 
         public async Task<Status> EditStatus(int id, Status status)
         {
-            var editedJob = await _happyBeeContext.Status.FindAsync(status);
-            if (editedJob != null)
+            var editedStatus = await _happyBeeContext.Status.FindAsync(id);
+            if (editedStatus != null)
             {
-                editedJob.Name = status.Name;
-                //_happyBeeContext.Status.Update(editedJob);
+                editedStatus.Name = status.Name;
+                editedStatus.Report = status.Report;
+                editedStatus.CreatedAt = status.CreatedAt;
+                editedStatus.doneTreatment = status.doneTreatment;
+                editedStatus.suppliedWater = status.suppliedWater;
+                editedStatus.suppliedSugar = status.suppliedSugar;
+
+
                 await _happyBeeContext.SaveChangesAsync();
-                return editedJob;
+                return editedStatus;
             }
             throw new Exception("Task not found.");
         }
 
-        public async Task<Status> GetInfoById(int id)
+        public async Task<Status> GetStatusById(int id)
         {
             return await _happyBeeContext.Status.FindAsync(id);
         }
@@ -61,6 +61,12 @@ namespace VersionOneWA.Shared.Services
         {
             var statuses = await _happyBeeContext.Status.ToListAsync();
             return statuses;
+        }
+
+        public async Task<List<Status>> GetUserStatuses(string userId)
+        {
+            return await _happyBeeContext.Status.Where(j => j.UserId == userId).ToListAsync();
+
         }
     }
 }

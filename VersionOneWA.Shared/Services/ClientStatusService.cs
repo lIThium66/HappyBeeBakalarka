@@ -36,7 +36,7 @@ namespace VersionOneWA.Shared.Services
             var result = await _httpClient.PutAsJsonAsync($"/api/status/{id}", status);
             return await result.Content.ReadFromJsonAsync<Status>();
         }
-        public async Task<Status> GetInfoById(int id)
+        public async Task<Status> GetStatusById(int id)
         {
             var result = await _httpClient.GetFromJsonAsync<Status>($"/api/status/{id}");
             return result;
@@ -44,9 +44,15 @@ namespace VersionOneWA.Shared.Services
 
         }
 
-        public Task<List<Status>> GetStatuses()
+        public async Task<List<Status>> GetStatuses()
         {
-            throw new NotImplementedException();
+            return await _httpClient.GetFromJsonAsync<List<Status>>("/api/status");
+        }
+
+        public async Task<List<Status>> GetUserStatuses(string userId)
+        {
+            return await _httpClient.GetFromJsonAsync<List<Status>>($"/api/status/user/{userId}");
+
         }
     }
 }

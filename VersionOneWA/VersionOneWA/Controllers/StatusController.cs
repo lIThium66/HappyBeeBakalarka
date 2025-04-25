@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using VersionOneWA.Controllers;
 using VersionOneWA.Shared.Classes;
 using VersionOneWA.Shared.Services;
 
@@ -16,9 +17,9 @@ namespace VersionOneWA.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Status>> GetInfoById(int id)
+        public async Task<ActionResult<Status>> GetStatusById(int id)
         {
-            var status = await _statusServices.GetInfoById(id);
+            var status = await _statusServices.GetStatusById(id);
             return Ok(status);
         }
 
@@ -42,5 +43,23 @@ namespace VersionOneWA.Controllers
             var deletedStatus = await _statusServices.DeleteStatus(id);
             return Ok(deletedStatus);
         }
+
+        [HttpGet]
+        public async Task<ActionResult<List<Job>>> GetAllStatuses()
+        {
+            var statuses = await _statusServices.GetStatuses();
+            return Ok(statuses);
+        }
+
+        [HttpGet("user/{userId}")]
+        public async Task<ActionResult<List<Job>>> GetUserJobs(string userId)
+        {
+            var statuses = await _statusServices.GetUserStatuses(userId);
+            return Ok(statuses);
+        }
     }
 }
+
+
+
+

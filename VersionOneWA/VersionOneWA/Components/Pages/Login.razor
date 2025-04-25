@@ -1,4 +1,5 @@
-﻿@page "/login"
+﻿@page "/"
+@page "/login"
 
 @using System.ComponentModel.DataAnnotations
 @using Microsoft.AspNetCore.Authentication
@@ -80,7 +81,8 @@
         if (result.Succeeded)
         {
             Logger.LogInformation("User logged in.");
-            RedirectManager.RedirectTo(ReturnUrl);
+            // RedirectManager.RedirectTo(ReturnUrl);
+            NavigationManager.NavigateTo("/home");
         }
         else if (result.RequiresTwoFactor)
         {
