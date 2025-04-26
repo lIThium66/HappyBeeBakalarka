@@ -32,6 +32,27 @@ else
             <label>Created At</label>
             <InputDate @bind-Value="status.CreatedAt" />
 
+            <label>Done Treatment</label>
+            <div class="button-group">
+                <button type="button" class="@GetButtonClass(status.doneTreatment, true, "treatment")" @onclick="() => SetTreatment(true)">YES</button>
+                <button type="button" class="@GetButtonClass(status.doneTreatment, false, "treatment")" @onclick="() => SetTreatment(false)">NO</button>
+                <span class="status-text">@treatmentText</span>
+            </div>
+
+            <label>Supplied Water</label>
+            <div class="button-group">
+                <button type="button" class="@GetButtonClass(status.suppliedWater, true, "water")" @onclick="() => SetWater(true)">YES</button>
+                <button type="button" class="@GetButtonClass(status.suppliedWater, false, "water")" @onclick="() => SetWater(false)">NO</button>
+                <span class="status-text">@waterText</span>
+            </div>
+
+            <label>Supplied Sugar</label>
+            <div class="button-group">
+                <button type="button" class="@GetButtonClass(status.suppliedSugar, true, "sugar")" @onclick="() => SetSugar(true)">YES</button>
+                <button type="button" class="@GetButtonClass(status.suppliedSugar, false, "sugar")" @onclick="() => SetSugar(false)">NO</button>
+                <span class="status-text">@sugarText</span>
+            </div>
+
         </div>
 
         <br />
@@ -46,6 +67,10 @@ else
     private EditContext? editContext;
     private bool isSubmitting;
     private string? currentUserId;
+    private string treatmentText = "";
+    private string waterText = "";
+    private string sugarText = "";
+
     private Status status = new Status
         {
             Name = string.Empty,
@@ -55,6 +80,57 @@ else
             suppliedWater = false,
             suppliedSugar = false
         };
+
+
+
+    private void SetTreatment(bool value)
+    {
+        status.doneTreatment = value;
+        treatmentText = value ? "Treatment: Done" : "Treatment: Not Done";
+    }
+
+    private void SetWater(bool value)
+    {
+        status.suppliedWater = value;
+        waterText = value ? "Water: Supplied" : "Water: Not Supplied";
+    }
+
+    private void SetSugar(bool value)
+    {
+        status.suppliedSugar = value;
+        sugarText = value ? "Sugar: Supplied" : "Sugar: Not Supplied";
+    }
+
+    private void UpdateTexts()
+    {
+        treatmentText = status.doneTreatment.HasValue && status.doneTreatment.Value
+            ? "Treatment: Done"
+            : "Treatment: Not Done";
+
+        waterText = status.suppliedWater.HasValue && status.suppliedWater.Value
+            ? "Water: Supplied"
+            : "Water: Not Supplied";
+
+        sugarText = status.suppliedSugar.HasValue && status.suppliedSugar.Value
+            ? "Sugar: Supplied"
+            : "Sugar: Not Supplied";
+    }
+
+
+    private string GetButtonClass(bool? currentValue, bool buttonValue, string category)
+    {
+        bool isSelected = currentValue == buttonValue;
+
+        if (buttonValue)
+        {
+            return isSelected ? "btn btn-primary selected" : "btn btn-primary";
+        }
+        else
+        {
+            return isSelected ? "btn btn-danger selected" : "btn btn-danger";
+        }
+    }
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -109,6 +185,7 @@ else
         }
 
         editContext = new EditContext(status);
+        UpdateTexts();
         StateHasChanged();
     }
 

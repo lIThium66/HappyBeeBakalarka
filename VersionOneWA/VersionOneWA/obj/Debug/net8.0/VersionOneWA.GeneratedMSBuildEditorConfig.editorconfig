@@ -205,10 +205,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQaWVDaGFydC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/Pages/ReportPage.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZXBvcnRQYWdlLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/Pages/TasksList.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUYXNrc0xpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -261,6 +257,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcTG9nb3V0QnV0dG9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/Shared/YesNoButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcWWVzTm9CdXR0b24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -300,6 +300,10 @@ build_metadata.AdditionalFiles.CssScope = b-4ao00b4nyn
 [C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/Pages/Register.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWdpc3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-5uni2f3hkn
+
+[C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/Pages/ReportPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZXBvcnRQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-18pkr61ifx
 
 [C:/Users/admin/OneDrive - Žilinská univerzita v Žiline/Škola/VAIIIIIIIIIII/VersionOneWA/VersionOneWA/Components/Pages/Tasks.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUYXNrcy5yYXpvcg==

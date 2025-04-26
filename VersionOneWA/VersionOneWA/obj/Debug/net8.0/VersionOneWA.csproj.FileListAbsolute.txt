@@ -624,3 +624,4 @@ C:\Users\admin\OneDrive - Žilinská univerzita v Žiline\Škola\VAIIIIIIIIIII\V
 C:\Users\admin\OneDrive - Žilinská univerzita v Žiline\Škola\VAIIIIIIIIIII\VersionOneWA\VersionOneWA\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
 C:\Users\admin\OneDrive - Žilinská univerzita v Žiline\Škola\VAIIIIIIIIIII\VersionOneWA\VersionOneWA\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
 C:\Users\admin\OneDrive - Žilinská univerzita v Žiline\Škola\VAIIIIIIIIIII\VersionOneWA\VersionOneWA\bin\Debug\net8.0\MudBlazor.dll
+C:\Users\admin\OneDrive - Žilinská univerzita v Žiline\Škola\VAIIIIIIIIIII\VersionOneWA\VersionOneWA\obj\Debug\net8.0\scopedcss\Components\Pages\ReportPage.razor.rz.scp.css

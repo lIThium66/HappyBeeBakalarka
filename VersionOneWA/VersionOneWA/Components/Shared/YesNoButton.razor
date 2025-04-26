@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Components
+
+<button class="btn-prim"></button>
+
+@code {
+    [Parameter]
+    public bool? Value { get; set; }
+
+    [Parameter]
+    public EventCallback<bool?> ValueChanged { get; set; }
+
+    [Parameter]
+    public string? Label { get; set; }
+
+    private async Task SetValue(bool newValue)
+    {
+        if (Value != newValue)
+        {
+            Value = newValue;
+            await ValueChanged.InvokeAsync(newValue);
+        }
+    }
+}

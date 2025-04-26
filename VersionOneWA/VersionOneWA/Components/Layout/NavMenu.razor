@@ -43,10 +43,10 @@
         </div>
 
           <div class="nav-item px-3">
-            <NavLink class="nav-link" href="beehivebase" @onclick ="() => isExpanded = !isExpanded">
+            <div class="nav-link" href="" @onclick ="HandleExpand">
                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> BASE TEST 
 @*                  <img src="task.png" alt="beehivebase" style="width: 28px; height:28px; margin: 10px;" /> BASE TEST *@
-            </NavLink>
+            </div>
         </div>
 
         @if(isExpanded) {
@@ -117,7 +117,7 @@
         currentUrl = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
         NavigationManager.LocationChanged += OnLocationChanged;
     }
- 
+
     private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
     {
         currentUrl = NavigationManager.ToBaseRelativePath(e.Location);
@@ -127,6 +127,11 @@
     public void Dispose()
     {
         NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+    private void HandleExpand(MouseEventArgs e)
+    {
+        isExpanded = !isExpanded;
+        // e.PreventDefault();
     }
 }
 

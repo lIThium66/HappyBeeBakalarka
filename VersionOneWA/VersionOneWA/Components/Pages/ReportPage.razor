@@ -6,8 +6,9 @@
 @rendermode InteractiveAuto
 @attribute [StreamRendering]
 
-<h3>Reports</h3>
-<h5>Manage your efficiently.</h5>
+<h2><strong>Reports</strong></h2>
+<h4>Stay informed, stay effective!</h4>
+<br>
 
 <CreateInfoButton></CreateInfoButton>
 <br>
@@ -19,19 +20,27 @@
 }
 else if (statuses.Count == 0)
 {
-    <span>No statuses found.</span>
+    <span>No reports found.</span>
     <br>
 }
 else
 {
-    <div class="tasks-container">
+    <div class="tasks-container scrollable-tasks-list">
         @foreach (var status in statuses)
         {
-            <div class="task-card">
+            <div class="task-card" title=@($"Report: {status.Report}, \nTreatment: {(status.doneTreatment == true ? "Yes" : "No")}, \nSupplied Water: {(status.suppliedWater == true ? "Yes" : "No")}, \nSupplied Sugar: {(status.suppliedSugar == true ? "Yes" : "No")}")
+                 @onclick="@(() => ToggleSelectedStatus(status))">
                 <h2>@status.Name</h2>
+                <h5>@(status.CreatedAt?.ToString("dd.MM.yyyy") ?? "Invalid date") (@(status.CreatedAt?.ToString("dddd") ?? ""))</h5>
+
+                @if (selectedStatus == status)
+                {
+                    <textarea readonly rows="5" class="readonly-textarea">@status.Report</textarea>
+                }
+
                 <div class="task-buttons">
                     <EditInfoButton Id="status.Id" />
-                    <DeleteInfoButton Id="status.Id" OnStatusDelete = "HandleInfoDeleted" />
+                    <DeleteInfoButton Id="status.Id" OnStatusDelete="HandleInfoDeleted" />
                 </div>
             </div>
         }
@@ -41,6 +50,8 @@ else
 @code {
     private List<Status>? statuses = null;
     private string? currentUserId;
+
+    private Status? selectedStatus = null;
 
     protected override async Task OnInitializedAsync()
     {
@@ -66,7 +77,7 @@ else
 
         if (user.IsInRole("Admin"))
         {
-            statuses = await StatusService.GetStatuses(); 
+            statuses = await StatusService.GetStatuses();
         }
     }
 
@@ -74,5 +85,17 @@ else
     {
         statuses = statuses?.Where(status => status.Id != id).ToList();
         StateHasChanged();
+    }
+
+    private void ToggleSelectedStatus(Status status)
+    {
+        if (selectedStatus == status)
+        {
+            selectedStatus = null; // ak klikneš znova, schováš
+        }
+        else
+        {
+            selectedStatus = status;
+        }
     }
 }

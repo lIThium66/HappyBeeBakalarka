@@ -1,0 +1,77 @@
+.tasks-container[b-18pkr61ifx] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow-y: auto;
+    max-height: calc(100vh - 250px);
+}
+
+.task-card[b-18pkr61ifx] {
+    background-color: gold;
+    border: 1px solid #daa520;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    width: calc(25% - 16px);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .task-card h2[b-18pkr61ifx] {
+        font-size: 24px;
+        margin: 0 0 10px 0;
+    }
+
+    .task-card h5[b-18pkr61ifx] {
+        font-size: 16px;
+        margin: 0 0 20px 0;
+    }
+
+.task-buttons[b-18pkr61ifx] {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.readonly-textarea[b-18pkr61ifx] {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    font-size: 1rem;
+    color: inherit;
+}
+
+
+    .task-buttons button[b-18pkr61ifx] {
+        border: none;
+        border-radius: 5px;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        /* Štýly pre konkrétne gombíky */
+        .task-buttons button:nth-child(1)[b-18pkr61ifx] {
+            background-color: #dc3545; /* Červený - Edit */
+            color: white;
+        }
+
+        .task-buttons button:nth-child(2)[b-18pkr61ifx] {
+            background-color: #212529; /* Čierny - Delete */
+            color: white;
+        }
+
+
+        .task-buttons button:hover[b-18pkr61ifx] {
+            opacity: 0.85;
+        }
