@@ -44,7 +44,11 @@
                 <label for="date-of-birth" class="form-label">Date of Birth</label>
                 <ValidationMessage For="() => Input.DateOfBirth" class="text-danger" />
             </div>
-            <button type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+            <div class="form-floating mb-3">
+                <InputText @bind-Value="Input.FarmNumber" class="form-control" placeholder="Please enter your farm number" />
+                <label for="farm-number" class="form-label">Farm Number</label>
+            </div>
+            <button type="submit" class="w-100 btn btn-lg btn-warning">Save</button>
         </EditForm>
     </div>
 </div>
@@ -72,6 +76,7 @@
         Input.DateOfBirth ??= user.DateOfBirth;
         Input.Name ??= user.Name;
         Input.Surname ??= user.Surname;
+        Input.FarmNumber ??= user.FarmNumber;
     }
 
     private async Task OnValidSubmitAsync()
@@ -80,6 +85,7 @@
         user.DateOfBirth = Input.DateOfBirth;
         user.Name = Input.Name;
         user.Surname = Input.Surname;
+        user.FarmNumber = Input.FarmNumber;
 
         var updateResult = await UserManager.UpdateAsync(user);
         if (!updateResult.Succeeded)
@@ -100,6 +106,7 @@
         public DateOnly? DateOfBirth { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+        public string? FarmNumber { get; set; }
         
         
 

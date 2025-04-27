@@ -8,6 +8,7 @@ namespace VersionOneWA.Shared.Classes
         public DateOnly? DateOfBirth { get; set; }
         public string Name { get; set; } = null!;
         public string Surname { get; set; } = null!;
+        public string? FarmNumber { get;  set; }
         public ICollection<Job> Jobs { get; set; }
         public ICollection<Beehive> Beehives { get; set; }
         public ICollection<Friends> Friends { get; set; }

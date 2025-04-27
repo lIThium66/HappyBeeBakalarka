@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "VersionOneWA.Client",
   "resources": {
-    "hash": "sha256-A7xh18h/bpE2K1G6SS+Op5QwrCrIjfL9VWcCs+qvTDY=",
+    "hash": "sha256-6+3DecpWDvgrSdPUQcAlBBPZ/1nrdcOv+05AJXDNB8s=",
     "jsModuleNative": {
       "dotnet.native.8.0.10.kk7ml3zqkh.js": "sha256-QVxMlY7ohmjgde/bZMA0dlWDAeuUP+tEfkiSdg4DFcE="
     },
@@ -247,12 +247,12 @@
       "mscorlib.wasm": "sha256-KvqZaNpjwhrOuzE4b4aMFsI+VUTyiWfoDI4zn4l9BM8=",
       "netstandard.wasm": "sha256-v+s7sWxtOM6bnOvC0jFrtnm6uMfbDymwl2nHNgbS2LM=",
       "System.Private.CoreLib.wasm": "sha256-pklll63uFQoY6vaD3vbluS9osYiJWLLLmob1yHFgepI=",
-      "VersionOneWA.Shared.wasm": "sha256-YrVeWaK93RTVthBvxIuZB+UQS6EJkLzNpTvXaxqFd64=",
-      "VersionOneWA.Client.wasm": "sha256-lhSS7Dbzgmv0l5XJ+0uj6Xk+rZmuEyOeCxekqOw8ymg="
+      "VersionOneWA.Shared.wasm": "sha256-7ODMEjhNoU4tp7WxYun1QlyW84w6NOq3NuLJOKg+OnM=",
+      "VersionOneWA.Client.wasm": "sha256-rEucm+PR9OQyhQsX84pP4my6A/E9Q76ovyFDTI+o3MY="
     },
     "pdb": {
-      "VersionOneWA.Shared.pdb": "sha256-ZuafredKzMhzI0qzS+R9G1ja+hEEHKlgWKlGx6JTG6c=",
-      "VersionOneWA.Client.pdb": "sha256-A9n42B3oneJTfnuLGvzW0dZeKU90x4/+Q7PY8GT6TLI="
+      "VersionOneWA.Shared.pdb": "sha256-SE0zr6QySFeBVh4u0S2I8UmTep+BKtUeOkLvCxqCLLU=",
+      "VersionOneWA.Client.pdb": "sha256-bLqj/ZqN3u9Y3XDcxhanEP6cmphBRI7ktU1u7hB6vx8="
     }
   },
   "cacheBootResources": true,

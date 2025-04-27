@@ -868,6 +868,11 @@ button[b-5uni2f3hkn] {
     align-items: stretch;
     overflow-y: auto;
     max-height: calc(100vh - 250px);
+
+}
+
+.tasks-container[b-18pkr61ifx] {
+    scroll-behavior: smooth;
 }
 
 .task-card[b-18pkr61ifx] {
@@ -883,6 +888,8 @@ button[b-5uni2f3hkn] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 250px;
+    width: calc(25% - 16px); /* 4 karty na riadok, mínus medzera */
 }
 
     .task-card h2[b-18pkr61ifx] {
@@ -936,6 +943,35 @@ button[b-5uni2f3hkn] {
         .task-buttons button:hover[b-18pkr61ifx] {
             opacity: 0.85;
         }
+
+.task-card:hover[b-18pkr61ifx] {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.task-buttons button[b-18pkr61ifx] {
+    flex: 1 1 45%; /* tlačidlá sa prispôsobia šírke rodiča a budú vedľa seba */
+    min-width: 100px; /* aby neboli príliš malé */
+}
+
+@media (max-width: 1200px) {
+    .task-card[b-18pkr61ifx] {
+        width: calc(33.333% - 16px); /* na väčších tabletoch budú 3 karty vedľa seba */
+    }
+}
+
+@media (max-width: 900px) {
+    .task-card[b-18pkr61ifx] {
+        width: calc(50% - 16px); /* na tabletoch a menších zariadeniach budú 2 karty */
+    }
+}
+
+@media (max-width: 600px) {
+    .task-card[b-18pkr61ifx] {
+        width: 100%; /* na mobiloch karta cez celý riadok */
+    }
+}
 /* _content/VersionOneWA/Components/Pages/Tasks.razor.rz.scp.css */
 .tasks-container[b-wvkfcn8eqq] {
     display: flex;

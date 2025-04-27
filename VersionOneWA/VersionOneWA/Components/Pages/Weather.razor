@@ -3,7 +3,7 @@
 @inject WeatherService WeatherService
 @rendermode InteractiveServer
 
-<h3>Weather</h3>
+<h2>Weather</h2>
 <hr>
 <div class="weather-container">
 
@@ -14,7 +14,7 @@
 
     @if (!string.IsNullOrEmpty(ErrorMessage))
     {
-        <p style="color: red;">@ErrorMessage</p>
+        <h3 style="color: red;"> <strong>@ErrorMessage</strong></h3>
     }
 
     @if (Forecast != null)
@@ -60,7 +60,7 @@
         }
         catch (HttpRequestException)
         {
-            ErrorMessage = "City does not exists!";
+            ErrorMessage = "Place not found!";
         }
         catch (Exception)
         {

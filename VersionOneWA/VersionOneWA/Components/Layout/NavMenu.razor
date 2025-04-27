@@ -15,98 +15,100 @@
     <nav class="flex-column">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="home" Match="NavLinkMatch.All">
-              @*   <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home *@
+                @*   <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home *@
                 <img src="home1.png" alt="Home" style="width: 28px; height:28px; margin: 10px;" /> Home
             </NavLink>
         </div>
-           <AuthorizeView>
-            <Authorized> 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="manage">
-                <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
-                <img src="user.png" alt="Profile" style="width: 28px; height: 28px; margin: 10px;" /> Profile
-            </NavLink>
-        </div>
+        <AuthorizeView>
+            <Authorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="manage">
+                        <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
+                        <img src="user.png" alt="Profile" style="width: 28px; height: 28px; margin: 10px;" /> Profile
+                    </NavLink>
+                </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="report">
-                <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
-                <img src="info1.png" alt="report" style="width: 28px; height: 28px; margin: 10px;" /> Reports
-            </NavLink>
-        </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="report">
+                        <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
+                        <img src="info1.png" alt="report" style="width: 28px; height: 28px; margin: 10px;" /> Reports
+                    </NavLink>
+                </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-               @*  <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather *@
-                <img src="weather.png" alt="Weather" style="width: 28px; height:28px; margin: 10px;" /> Weather
-            </NavLink>
-        </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="weather">
+                        @*  <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather *@
+                        <img src="weather.png" alt="Weather" style="width: 28px; height:28px; margin: 10px;" /> Weather
+                    </NavLink>
+                </div>
 
-          <div class="nav-item px-3">
-            <div class="nav-link" href="" @onclick ="HandleExpand">
-               <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> BASE TEST 
-@*                  <img src="task.png" alt="beehivebase" style="width: 28px; height:28px; margin: 10px;" /> BASE TEST *@
-            </div>
-        </div>
+                <div class="nav-item px-3">
+                    <div class="nav-link" href="" @onclick="HandleExpand">
+                        @*                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> BASE INFO  *@
+                        <img src="layers.png" style="width: 28px; height:28px; margin: 10px;" /> <strong>Base info</strong>
+                    </div>
+                </div>
 
-        @if(isExpanded) {
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="tasks">
-                    <!--- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Tasks -->
-                    <img src="task.png" alt="AddTask" style="width: 28px; height:28px; margin: 10px;" /> Tasks
-                </NavLink>
-            </div>
+                @if (isExpanded)
+                {
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link" href="tasks">
+                            <!--- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Tasks -->
+                            <img src="task.png" alt="AddTask" style="width: 28px; height:28px; margin: 10px;" /> Tasks
+                        </NavLink>
+                    </div>
 
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="done-tasks">
-                    <!--- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Tasks -->
-                    <img src="donetask1.png" alt="FinishedTasks" style="width: 28px; height:28px; margin: 10px;" /> Finished Work
-                </NavLink>
-            </div>
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="beehives">
-                    <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
-                    <img src="beehiveBL.png" alt="Beehives" style="width: 28px; height: 28px; margin: 10px;" /> Beehives
-                </NavLink>
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link" href="done-tasks">
+                            <!--- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Tasks -->
+                            <img src="donetask1.png" alt="FinishedTasks" style="width: 28px; height:28px; margin: 10px;" /> Finished Work
+                        </NavLink>
+                    </div>
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link" href="beehives">
+                            <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
+                            <img src="beehiveBL.png" alt="Beehives" style="width: 28px; height: 28px; margin: 10px;" /> Beehives
+                        </NavLink>
 
-            </div>  
-        } 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="bee-friends">
-                <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
-                <img src="findingnobg.png" alt="Bee-friends" style="width: 28px; height: 28px; margin: 10px;" /> Bee Friends
-            </NavLink>
-        </div>
+                    </div>
+                }
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="bee-friends">
+                        <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
+                        <img src="findingnobg.png" alt="Bee-friends" style="width: 28px; height: 28px; margin: 10px;" /> Bee Friends
+                    </NavLink>
+                </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="friends">
-                <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
-                <img src="beesss.png" alt="Friends" style="width: 28px; height: 28px; margin: 10px;" /> Friends
-            </NavLink>
-        </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="friends">
+                        <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
+                        <img src="beesss.png" alt="Friends" style="width: 28px; height: 28px; margin: 10px;" /> Friends
+                    </NavLink>
+                </div>
 
-          <div class="nav-item px-3">
-            <NavLink class="nav-link" href="friend-requests">
-                <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
-                <img src="beefriendsnobg.png" alt="Friend-requests" style="width: 28px; height: 28px; margin: 10px;" /> Friend Requests
-            </NavLink>
-        </div>
-  
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="friend-requests">
+                        <!-- <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Beehives -->
+                        <img src="beefriendsnobg.png" alt="Friend-requests" style="width: 28px; height: 28px; margin: 10px;" /> Friend Requests
+                    </NavLink>
+                </div>
+
             </Authorized>
         </AuthorizeView>
 
 
     </nav>
+    <AuthorizeView>
+        <Authorized>
+            <div class="nav-item px-3">
+                <a href="/logout" class="nav-link">
+                    @* <span class="bi bi-arrow-bar-left-nav-menu" aria-hidden="true"></span> Logout *@
+                    <img src="logouticon.png" alt="Friends" style="width: 28px; height: 28px; margin: 10px;" /> Logout
+                </a>
+            </div>
+        </Authorized>
+    </AuthorizeView>
 </div>
-<AuthorizeView>
-    <Authorized>
-        <div class="nav-item px-3">
-            <a href="/logout" class="nav-link">
-                <span class="bi bi-arrow-bar-left-nav-menu" aria-hidden="true"></span> Logout
-            </a>
-        </div>
-    </Authorized>
-</AuthorizeView>
 
 @code {
     private string? currentUrl;

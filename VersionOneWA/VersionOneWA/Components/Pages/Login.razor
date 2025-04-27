@@ -23,7 +23,7 @@
         <img src="keeperLogin.png" alt="USER" />
         <EditForm Model="Input" method="post" OnValidSubmit="LoginUser" FormName="login">
             <DataAnnotationsValidator />
-            <ValidationSummary class="text-danger" role="alert" />
+           
 
             <div class="form-floating">
                 <InputText @bind-Value="Input.Email" class="form-control" autocomplete="username" placeholder="Email" />
@@ -47,6 +47,7 @@
                 <a href="@(NavigationManager.GetUriWithQueryParameters("/register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))">Register as a new user</a>
                @* <a href="Account/ResendEmailConfirmation">Resend email confirmation</a> *@
             </div>
+            <ValidationSummary class="text-danger" role="alert" />
         </EditForm>
     </div>
 </div>

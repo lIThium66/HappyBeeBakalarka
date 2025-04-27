@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "a1iAO2BMGhIMZb99a324SkKhX77Js+eBRdS/1+GpG+Y=",
+  "Hash": "FZWQwbPkvR1oKdW3pk9Exs3rW1AUw4LV1jaT2U11ACQ=",
   "Source": "VersionOneWA",
   "BasePath": "_content/VersionOneWA",
   "Mode": "Default",
@@ -9973,6 +9973,25 @@
       "OriginalItemSpec": "wwwroot\\keeperLogin.png"
     },
     {
+      "Identity": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\layers.png",
+      "SourceId": "VersionOneWA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\",
+      "BasePath": "_content/VersionOneWA",
+      "RelativePath": "layers.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\layers.png"
+    },
+    {
       "Identity": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\login.png",
       "SourceId": "VersionOneWA",
       "SourceType": "Discovered",
@@ -9990,6 +10009,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\login.png"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\logouticon.png",
+      "SourceId": "VersionOneWA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\",
+      "BasePath": "_content/VersionOneWA",
+      "RelativePath": "logouticon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logouticon.png"
     },
     {
       "Identity": "C:\\Users\\admin\\OneDrive - Žilinská univerzita v Žiline\\Škola\\VAIIIIIIIIIII\\VersionOneWA\\VersionOneWA\\wwwroot\\removedbeefriend.png",

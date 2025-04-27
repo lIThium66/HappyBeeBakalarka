@@ -59,7 +59,7 @@
 <div class="deadline-tasks-container">
     @for (int i = 0; i < jobs.Count; i++)
     {
-        if (jobs[i].Priority != 1 && jobs[i].JobDate.HasValue && jobs[i].JobDate <= DateTime.Now.AddDays(3) &&  !jobs[i].IsCompleted)
+        if (jobs[i].Priority != 1 && jobs[i].JobDate.HasValue && jobs[i].JobDate <= DateTime.Now.AddDays(14) &&  !jobs[i].IsCompleted)
         {
             <div class="task-card">
                 <h2>@jobs[i].Name</h2>
