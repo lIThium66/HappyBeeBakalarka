@@ -89,7 +89,7 @@
         }
 
         user.EmailConfirmed = true; //toto som si nastavil natvrdo zatial kedze nemam realny email sender
-        await UserManager.UpdateAsync(user); //a robilo mi to obcas chybni email conf. aj ked som mail potvrdil
+        await UserManager.UpdateAsync(user); //a robilo mi to obcas chybny email conf. aj ked som mail potvrdil
 
         Logger.LogInformation("User created a new account with password.");
 

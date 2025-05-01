@@ -24,10 +24,6 @@ namespace VersionOneWA.Shared.Classes
         [ForeignKey("UserId")]
         public ApplicationUser User { get; set; } = null!;
 
-        //beehivebase
-
-        //public int BeehiveBaseId { get; set; }
-        //[ForeignKey("BeehiveBaseId")]
-        //public BeehiveBase BeehiveBase { get; set; } = null!;
+ 
     }
 }
