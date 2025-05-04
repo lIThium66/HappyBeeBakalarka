@@ -7,7 +7,7 @@ using VersionOneWA.Shared.Services;
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://api.openweathermap.org/") });
-builder.Services.AddScoped<WeatherService>(); // Registrácia služby
+builder.Services.AddScoped<WeatherService>(); //registracia api k pocasiu
 
 builder.Services.AddAuthorizationCore();
 builder.Services.AddCascadingAuthenticationState();

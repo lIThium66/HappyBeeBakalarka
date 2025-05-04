@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VersionOneWA.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0d46ee66a60048d9533d26162c2ba0de7aa5b5f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+485498d818cb4f1b8e331e932372d914cb160913")]
 [assembly: System.Reflection.AssemblyProductAttribute("VersionOneWA.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VersionOneWA.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

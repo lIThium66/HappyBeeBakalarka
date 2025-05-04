@@ -1,5 +1,4 @@
-﻿@page "/"
-@page "/login"
+﻿@page "/login"
 
 @using System.ComponentModel.DataAnnotations
 @using Microsoft.AspNetCore.Authentication
@@ -23,7 +22,7 @@
         <img src="keeperLogin.png" alt="USER" />
         <EditForm Model="Input" method="post" OnValidSubmit="LoginUser" FormName="login">
             <DataAnnotationsValidator />
-           
+
 
             <div class="form-floating">
                 <InputText @bind-Value="Input.Email" class="form-control" autocomplete="username" placeholder="Email" />
@@ -45,7 +44,7 @@
             <div class="login-links">
                 <a href="/forgotPassword">Forgot your password?</a>
                 <a href="@(NavigationManager.GetUriWithQueryParameters("/register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))">Register as a new user</a>
-               @* <a href="Account/ResendEmailConfirmation">Resend email confirmation</a> *@
+                @* <a href="Account/ResendEmailConfirmation">Resend email confirmation</a> *@
             </div>
             <ValidationSummary class="text-danger" role="alert" />
         </EditForm>
